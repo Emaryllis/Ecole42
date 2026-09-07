@@ -1,7 +1,8 @@
 NAME = materia
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp ICharacter.cpp IMateriaSource.cpp main.cpp
+SRCS = AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp \
+	ICharacter.cpp IMateriaSource.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 $(NAME): $(OBJS)
