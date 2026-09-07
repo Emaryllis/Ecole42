@@ -1,0 +1,10 @@
+push_swap
+build/
+
+# CMake
+cmake_build/
+
+# CMake build errors
+cmake-build-debug/
+CMakeFiles/
+CMakeCache.txt

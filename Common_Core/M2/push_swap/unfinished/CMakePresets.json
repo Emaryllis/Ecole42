@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 28,
+    "patch": 3
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "description": "Auto-generated preset for push_swap",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/cmake_build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "PROJECT_NAME": "push_swap"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "description": "Build using the default configure preset",
+      "configurePreset": "default",
+      "targets": [],
+      "jobs": 4
+    }
+  ]
+}

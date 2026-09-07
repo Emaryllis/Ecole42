@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    line-height: 1.6;
+}
+.parallax-section {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+#section1 { 
+    /* Not setting body to background image & using
+       attachment since this method has a better
+       time complexity than setting body method */
+    background-image: url('https://picsum.photos/1500');
+}
+#section3 {
+    background-image: url('https://picsum.photos/1300');
+}
+.content-section {
+    background-color: black;
+    color: white;
+    text-align: center; 
+    padding: 50px 0;
+}
+.message {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+h1, h2, h3 {
+    margin-bottom: 10px;
+}

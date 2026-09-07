@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Page</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="../assets/js/color-modes.js"></script>
+  <link rel="stylesheet" href="assets/css/theme-button.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid"> <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse d-lg-flex" id="navbarCollapse">
+        <a class="navbar-brand col-lg-3 me-0" href="/">Emaryllis's Site</a>
+        <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="tos.html">Terms of Service</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              Our Projects
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="website.html">Our Games</a></li>
+              <li><a class="dropdown-item" href="game.html">Our Websites</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+          <a href="login.html" class="btn btn-primary rounded-pill px-4 py-2 fw-medium">Log In</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <button id="themeToggleBtn"
+      class="btn btn-dark position-fixed bottom-0 start-0 m-3 rounded-circle p-2 d-flex align-items-center justify-content-center"
+      title="Toggle theme">
+      <img id="themeIcon" src="https://img.icons8.com/?size=20&id=1x4dA4gXbFjF&format=png" alt="Toggle theme icon"
+        width="20" height="20">
+    </button>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeIcons = {
+        light: 'https://img.icons8.com/?size=50&id=660&format=png&color=ffffff', // Moon (switch to dark)
+        dark: 'https://img.icons8.com/?size=50&id=648&format=png'             // Sun (switch to light)
+      };
+      const btn = document.getElementById('themeToggleBtn');
+      const icon = document.getElementById('themeIcon');
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-bs-theme', theme);
+        localStorage.setItem('bs-theme', theme);
+        icon.src = themeIcons[theme];
+        icon.alt = theme === 'dark' ? 'Light mode icon' : 'Dark mode icon';
+        btn.classList.remove('bg-light', 'bg-dark');
+        btn.classList.add(theme === 'dark' ? 'bg-light' : 'bg-dark');
+      }
+      setTheme(localStorage.getItem('bs-theme') || 'dark');
+      btn.addEventListener('click', () => setTheme(document.documentElement.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark'));
+    });
+  </script>
+</body>
+
+</html>

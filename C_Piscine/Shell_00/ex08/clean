@@ -1,0 +1,7 @@
+# find . Finds from current dir
+# \( \) groups conditions
+# -o Logical OR
+# -name $ Returns true if it matches
+# -type f Only finds files recursively
+# -delete Deletes the matched files destructively
+find . \( -type f -name "*~" -o -name "#*#" \) -print -delete
