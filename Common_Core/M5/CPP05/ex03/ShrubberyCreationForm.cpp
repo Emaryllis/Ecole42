@@ -3,17 +3,17 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 	: AForm("Shrubbery Creation Form", 145, 137), _target("default_target") {
-	std::cout << "ShrubberyCreationForm Default constructor called for" << this->getName() << std::endl;
+	std::cout << "ShrubberyCreationForm Default constructor called for " << this->getName() << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 	: AForm("Shrubbery Creation Form", 145, 137), _target(target) {
-	std::cout << "ShrubberyCreationForm Parameterized constructor called for" << this->getName() << std::endl;
+	std::cout << "ShrubberyCreationForm Parameterized constructor called for " << this->getName() << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 	: AForm(other), _target(other._target) {
-	std::cout << "ShrubberyCreationForm Copy constructor called for" << this->getName() << std::endl;
+	std::cout << "ShrubberyCreationForm Copy constructor called for " << this->getName() << std::endl;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {

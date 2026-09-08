@@ -3,17 +3,17 @@
 
 Cat::Cat() : AAnimal("Cat"), brain(NULL) {
 	brain = new Brain();
-	std::cout << "Cat Default constructor called" << std::endl;
+	std::cout << "Cat default constructor called" << std::endl;
 }
 
 Cat::Cat(const std::string& type) : AAnimal(type), brain(NULL) {
 	brain = new Brain();
-	std::cout << "Cat Parameterized constructor called for " << this->getType() << std::endl;
+	std::cout << "Cat parameterized constructor called for " << this->getType() << std::endl;
 }
 
 Cat::Cat(const Cat& other) : AAnimal(other), brain(NULL) {
 	brain = new Brain(*other.brain);
-	std::cout << "Cat Copy constructor called for " << this->getType() << std::endl;
+	std::cout << "Cat copy constructor called for " << this->getType() << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other) {
@@ -23,7 +23,7 @@ Cat& Cat::operator=(const Cat& other) {
 			delete brain;
 		brain = new Brain(*other.brain);
 	}
-	std::cout << "Cat Copy assignment operator called for " << this->getType() << std::endl;
+	std::cout << "Cat copy assignment operator called for " << this->getType() << std::endl;
 	return *this;
 }
 
@@ -31,7 +31,7 @@ Cat::~Cat() {
 	if (brain) {
 		delete brain;
 	}
-	std::cout << "Cat Destructor called for " << this->getType() << std::endl;
+	std::cout << "Cat destructor called for " << this->getType() << std::endl;
 }
 
 void Cat::makeSound() const {

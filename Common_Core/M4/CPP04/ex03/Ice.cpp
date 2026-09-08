@@ -3,22 +3,22 @@
 #include "ICharacter.hpp"
 
 Ice::Ice() : AMateria("Ice") {
-	std::cout << "Ice Default constructor called" << std::endl;
+	std::cout << "Ice default constructor called" << std::endl;
 }
 
 Ice::Ice(Ice const& other) : AMateria(other) {
-	std::cout << "Ice Copy constructor called for" << type << std::endl;
+	std::cout << "Ice copy constructor called for " << type << std::endl;
 }
 
 Ice& Ice::operator=(Ice const& other) {
 	if (this != &other)
 		AMateria::operator=(other);
-	std::cout << "Ice Copy assignment operator called for" << type << std::endl;
+	std::cout << "Ice copy assignment operator called for " << type << std::endl;
 	return *this;
 }
 
 Ice::~Ice() {
-	std::cout << "Ice Destructor called for" << type << std::endl;
+	std::cout << "Ice destructor called for " << type << std::endl;
 }
 
 AMateria* Ice::clone() const {

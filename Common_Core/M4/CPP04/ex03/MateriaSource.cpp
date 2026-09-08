@@ -8,14 +8,14 @@
 MateriaSource::MateriaSource() {
 	for (int i = 0; i < 4; ++i)
 		learned[i] = NULL;
-	std::cout << "MateriaSource Default constructor called" << std::endl;
+	std::cout << "MateriaSource default constructor called" << std::endl;
 }
 
 MateriaSource::MateriaSource(MateriaSource const& other) {
 	for (int i = 0; i < 4; ++i)
 		learned[i] = NULL;
 	copyLearned(other);
-	std::cout << "MateriaSource Copy constructor called" << std::endl;
+	std::cout << "MateriaSource copy constructor called" << std::endl;
 }
 
 MateriaSource& MateriaSource::operator=(MateriaSource const& other) {
@@ -23,13 +23,13 @@ MateriaSource& MateriaSource::operator=(MateriaSource const& other) {
 		clearLearned();
 		copyLearned(other);
 	}
-	std::cout << "MateriaSource Copy assignment operator called" << std::endl;
+	std::cout << "MateriaSource copy assignment operator called" << std::endl;
 	return *this;
 }
 
 MateriaSource::~MateriaSource() {
 	clearLearned();
-	std::cout << "MateriaSource Destructor called" << std::endl;
+	std::cout << "MateriaSource destructor called" << std::endl;
 }
 
 void MateriaSource::learnMateria(AMateria* m) {

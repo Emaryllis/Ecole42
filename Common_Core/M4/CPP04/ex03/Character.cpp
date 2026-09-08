@@ -8,20 +8,20 @@
 Character::Character() : name("Character") {
 	for (int i = 0; i < 4; ++i)
 		inventory[i] = NULL;
-	std::cout << "Character Default constructor called" << std::endl;
+	std::cout << "Character default constructor called" << std::endl;
 }
 
 Character::Character(std::string const& name) : name(name) {
 	for (int i = 0; i < 4; ++i)
 		inventory[i] = NULL;
-	std::cout << "Character Parameterized constructor called for" << name << std::endl;
+	std::cout << "Character parameterized constructor called for " << name << std::endl;
 }
 
 Character::Character(Character const& other) : name(other.name) {
 	for (int i = 0; i < 4; ++i)
 		inventory[i] = NULL;
 	copyInventory(other);
-	std::cout << "Character Copy constructor called for" << name << std::endl;
+	std::cout << "Character copy constructor called for " << name << std::endl;
 }
 
 Character& Character::operator=(Character const& other) {
@@ -30,13 +30,13 @@ Character& Character::operator=(Character const& other) {
 		name = other.name;
 		copyInventory(other);
 	}
-	std::cout << "Character Copy assignment operator called for " << name << std::endl;
+	std::cout << "Character copy assignment operator called for " << name << std::endl;
 	return *this;
 }
 
 Character::~Character() {
 	clearInventory();
-	std::cout << "Character Destructor called for " << name << std::endl;
+	std::cout << "Character destructor called for " << name << std::endl;
 }
 
 std::string const& Character::getName() const {

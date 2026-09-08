@@ -2,12 +2,12 @@
 #include "Bureaucrat.hpp"
 
 AForm::AForm(): _name("Default AForm"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {
-	std::cout << "AForm Default constructor called for" << _name << std::endl;
+	std::cout << "AForm Default constructor called for " << _name << std::endl;
 }
 
 AForm::AForm(const std::string &name, const int gradeToSign, const int gradeToExecute)
 	: _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
-	std::cout << "AForm Parameterized constructor called for" << _name << std::endl;
+	std::cout << "AForm Parameterized constructor called for " << _name << std::endl;
 	if (_gradeToSign < 1 || _gradeToExecute < 1)
 		throw GradeTooHighException();
 	if (_gradeToSign > 150 || _gradeToExecute > 150)
@@ -17,7 +17,7 @@ AForm::AForm(const std::string &name, const int gradeToSign, const int gradeToEx
 AForm::AForm(const AForm &other)
 	: _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign),
 	  _gradeToExecute(other._gradeToExecute) {
-	std::cout << "AForm Copy constructor called for" << _name << std::endl;
+	std::cout << "AForm Copy constructor called for " << _name << std::endl;
 }
 
 AForm &AForm::operator=(const AForm &other) {

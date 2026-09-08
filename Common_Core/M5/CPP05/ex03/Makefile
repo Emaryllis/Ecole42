@@ -1,7 +1,7 @@
 NAME = form
 CXX = c++
 SRC = AForm.cpp Bureaucrat.cpp main.cpp PresidentialPardonForm.cpp \
-	RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+	RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 FLAGS = -Wall -Wextra -Werror -std=c++98
 OBJ = $(SRC:.cpp=.o)
 all: $(NAME)

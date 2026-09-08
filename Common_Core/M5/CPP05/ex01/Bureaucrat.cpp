@@ -2,11 +2,11 @@
 #include "Form.hpp"
 
 Bureaucrat::Bureaucrat(): _name("Default Bureaucrat"), _grade(150) {
-	std::cout << "Bureaucrat Default constructor called for" << _name << std::endl;
+	std::cout << "Bureaucrat Default constructor called for " << _name << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, const int grade): _name(name) {
-	std::cout << "Bureaucrat Parameterized constructor called for" << _name << std::endl;
+	std::cout << "Bureaucrat Parameterized constructor called for " << _name << std::endl;
 	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
@@ -16,7 +16,7 @@ Bureaucrat::Bureaucrat(const std::string &name, const int grade): _name(name) {
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
 	: _name(other._name), _grade(other._grade) {
-	std::cout << "Bureaucrat Copy constructor called for" << _name << std::endl;
+	std::cout << "Bureaucrat Copy constructor called for " << _name << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {

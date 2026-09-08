@@ -6,7 +6,7 @@ DiamondTrap::DiamondTrap()
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 30;
-	std::cout << "DiamondTrap Default constructor called" << std::endl;
+	std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string &name)
@@ -14,7 +14,7 @@ DiamondTrap::DiamondTrap(const std::string &name)
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 30;
-	std::cout << "DiamondTrap Parameterized constructor called for " << this->name << std::endl;
+	std::cout << "DiamondTrap parameterized constructor called for " << this->name << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
@@ -22,7 +22,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other)
 	  FragTrap(static_cast<const FragTrap &>(other)),
 	  ScavTrap(static_cast<const ScavTrap &>(other)),
 	  name(other.name) {
-	std::cout << "DiamondTrap Copy constructor called for " << name << std::endl;
+	std::cout << "DiamondTrap copy constructor called for " << name << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
@@ -30,12 +30,12 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other) {
 		ClapTrap::operator=(other);
 		name = other.name;
 	}
-	std::cout << "DiamondTrap Copy assignment operator called for " << name << std::endl;
+	std::cout << "DiamondTrap copy assignment operator called for " << name << std::endl;
 	return *this;
 }
 
 DiamondTrap::~DiamondTrap() {
-	std::cout << "DiamondTrap Destructor called for " << name << std::endl;
+	std::cout << "DiamondTrap destructor called for " << name << std::endl;
 }
 
 void DiamondTrap::attack(const std::string &target) {

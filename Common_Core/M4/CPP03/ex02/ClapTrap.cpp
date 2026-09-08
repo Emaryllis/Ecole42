@@ -2,20 +2,20 @@
 #include <iostream>
 
 ClapTrap::ClapTrap() : name("ClapTrap"), hitPoints(10), energyPoints(10), attackDamage(0) {
-	std::cout << "ClapTrap Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
-	std::cout << "ClapTrap Parameterized constructor called for " << this->name << std::endl;
+	std::cout << "ClapTrap parameterized constructor called for " << this->name << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap Destructor called for " << name << std::endl;
+	std::cout << "ClapTrap destructor called for " << name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj)
 	: name(obj.name), hitPoints(obj.hitPoints), energyPoints(obj.energyPoints), attackDamage(obj.attackDamage) {
-	std::cout << "ClapTrap Copy constructor called for " << name << std::endl;
+	std::cout << "ClapTrap copy constructor called for " << name << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
@@ -25,7 +25,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 		energyPoints = other.energyPoints;
 		attackDamage = other.attackDamage;
 	}
-	std::cout << "ClapTrap Copy assignment operator called for " << name << std::endl;
+	std::cout << "ClapTrap copy assignment operator called for " << name << std::endl;
 	return *this;
 }
 

@@ -9,14 +9,14 @@ Brain::Brain() {
 }
 
 Brain::Brain(const Brain& other) {
-	std::cout << "Brain Copy Constructor called" << std::endl;
+	std::cout << "Brain copy Constructor called" << std::endl;
 	for (int i = 0; i < 100; i++) {
 		ideas[i] = other.ideas[i];
 	}
 }
 
 Brain& Brain::operator=(const Brain& other) {
-	std::cout << "Brain Copy Assignment operator called" << std::endl;
+	std::cout << "Brain copy Assignment operator called" << std::endl;
 	if (this != &other) {
 		for (int i = 0; i < 100; i++) {
 			ideas[i] = other.ideas[i];
@@ -26,7 +26,7 @@ Brain& Brain::operator=(const Brain& other) {
 }
 
 Brain::~Brain() {
-	std::cout << "Brain Destructor called" << std::endl;
+	std::cout << "Brain destructor called" << std::endl;
 }
 
 const std::string& Brain::getIdea(int index) const {

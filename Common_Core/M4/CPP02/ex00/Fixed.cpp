@@ -4,19 +4,19 @@
 const int Fixed::fracBits = 8;
 
 Fixed::Fixed() : fixedPoint(0) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "default constructor called" << std::endl;
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &obj): fixedPoint(obj.getRawBits()) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "copy constructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &obj) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "copy assignment operator called" << std::endl;
 	if (this != &obj) {
 		this->fixedPoint = obj.fixedPoint;
 	}

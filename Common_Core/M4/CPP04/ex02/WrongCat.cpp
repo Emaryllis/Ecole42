@@ -18,10 +18,10 @@ WrongCat& WrongCat::operator=(const WrongCat& other) {
 		WrongAnimal::operator=(other);
 		type = other.type;
 	}
-	std::cout << "WrongCat Copy assignment operator called for " << type << std::endl;
+	std::cout << "WrongCat copy assignment operator called for " << type << std::endl;
     return *this;
 }
 
 WrongCat::~WrongCat() {
-	std::cout << "WrongCat Destructor called for " << type << std::endl;
+	std::cout << "WrongCat destructor called for " << type << std::endl;
 }
