@@ -218,4 +218,14 @@
       </ul>
     </details>
   </li>
+  <li>
+    <details>
+      <summary>M5 Resources:</summary>
+      <ul>
+        <li><a href="https://devabdilah.medium.com/inception-42-a-comprehensive-guide-to-dockerizing-your-first-infrastructure-part-i-bd7d4bdc13e6">Comprehensive Inception Guide (Pt 1)</a></li>
+        <li><a href="https://devabdilah.medium.com/inception-42-a-comprehensive-guide-to-dockerizing-your-first-infrastructure-part-ii-bed64a739bf4">Comprehensive Inception Guide (Pt 2)</a></li>
+        <li><a href="https://devabdilah.medium.com/inception-42-a-comprehensive-guide-to-dockerizing-your-first-infrastructure-part-iii-a10e93e9d922">Comprehensive Inception Guide (Pt 3)</a></li>
+      </ul>
+    </details>
+  </li>
 </ul>
