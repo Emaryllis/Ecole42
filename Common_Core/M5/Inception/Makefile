@@ -16,8 +16,17 @@ fclean: clean
 re: fclean all
 init:
 	bash srcs/init.sh
+
+# Debug
+re-wordpress:
+	docker compose -f $(DOCKER_COMPOSE_FILE) up -d --build wordpress
+re-nginx:
+	docker compose -f $(DOCKER_COMPOSE_FILE) up -d --build nginx
+re-mariadb:
+	docker compose -f $(DOCKER_COMPOSE_FILE) up -d --build mariadb
 logs:
 	docker compose -f $(DOCKER_COMPOSE_FILE) logs -f
 ps:
 	docker compose -f $(DOCKER_COMPOSE_FILE) ps
+
 .PHONY: all build down clean fclean re init logs ps

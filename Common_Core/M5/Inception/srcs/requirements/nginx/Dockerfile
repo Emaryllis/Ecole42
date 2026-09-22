@@ -10,7 +10,7 @@ COPY conf/nginx.conf /tmp/nginx.conf.template
 COPY conf/cert.pem /etc/nginx/ssl/cert.pem
 COPY conf/key.pem /etc/nginx/ssl/key.pem
 
-RUN envsubst < /tmp/nginx.conf.template > /etc/nginx/nginx.conf
+RUN envsubst '${DOMAIN_NAME}' < /tmp/nginx.conf.template > /etc/nginx/nginx.conf
 
 EXPOSE 443
 
