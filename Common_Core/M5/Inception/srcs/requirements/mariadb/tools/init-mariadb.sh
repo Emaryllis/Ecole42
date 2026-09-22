@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 mkdir -p /run/mysqld
 chown mysql:mysql /run/mysqld
@@ -6,16 +7,22 @@ chown mysql:mysql /run/mysqld
 if [ ! -d "/var/lib/mysql/mysql" ]; then
     echo "Initializing MariaDB..."
     mysql_install_db --user=mysql --datadir=/var/lib/mysql
+
+    export MYSQL_ROOT_PASSWORD="$(cat /run/secrets/db_root_password)"
+    export MYSQL_PASSWORD="$(cat /run/secrets/db_password)"
+
+    envsubst < /tmp/init.sql.template > /tmp/init.sql
+    rm -f /tmp/init.sql.template
+
+    mysqld --user=mysql --bind-address=0.0.0.0 --init-file=/tmp/init.sql &
+    MYSQL_PID=$!
+
+    until mysqladmin ping -h 127.0.0.1 --silent 2>/dev/null; do sleep 1; done
+
+    rm -f /tmp/init.sql
+    unset MYSQL_ROOT_PASSWORD WP_PASSWORD
+
+    wait $MYSQL_PID
+else
+    exec mysqld --user=mysql --bind-address=0.0.0.0
 fi
-
-ROOT_PASSWORD=$(cat /run/secrets/db_root_password)
-WP_PASSWORD=$(cat /run/secrets/db_password)
-
-cat > /tmp/init.sql <<EOF
-CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE};
-CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${WP_PASSWORD}';
-GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO '${MYSQL_USER}'@'%';
-FLUSH PRIVILEGES;
-EOF
-
-exec mysqld --user=mysql --init-file=/tmp/init.sql

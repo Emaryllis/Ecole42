@@ -2,6 +2,7 @@
 
 set -e
 
+# Generate SSL certificates
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/.env"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CERT_DIR="${SCRIPT_DIR}/requirements/nginx/conf"
