@@ -14,7 +14,7 @@ services:
       - inception
     restart: always
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      test: [ "CMD-SHELL", "mysqladmin ping --socket=/run/mysqld/mysqld.sock -u root -p$$(cat /run/secrets/db_root_password) || exit 1" ]
       interval: 5s
       timeout: 2s
       retries: 3
