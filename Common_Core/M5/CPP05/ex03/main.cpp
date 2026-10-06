@@ -1,10 +1,10 @@
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 #include "Intern.hpp"
-#include "AForm.hpp"
 
 int main() {
 	Intern someRandomIntern;
-	Bureaucrat boss("Boss", 1);
+	const Bureaucrat boss("Boss", 1);
 
 	std::cout << "\n=== 1. Valid Form Creation: Robotomy Request ===" << std::endl;
 	AForm *formPtr = someRandomIntern.makeForm("robotomy request", "Bender");
@@ -32,9 +32,7 @@ int main() {
 
 	std::cout << "\n=== 4. Invalid Form Name ===" << std::endl;
 	formPtr = someRandomIntern.makeForm("tax evasion request", "Corporate");
-	if (formPtr) {
-		delete formPtr;
-	}
+	if (formPtr) delete formPtr;
 
 	std::cout << "\n=== Cleanup ===" << std::endl;
 	return 0;

@@ -1,19 +1,19 @@
-#include "ShrubberyCreationForm.hpp"
 #include <fstream>
+#include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 	: AForm("Shrubbery Creation Form", 145, 137), _target("default_target") {
-	std::cout << "ShrubberyCreationForm Default constructor called for " << this->getName() << std::endl;
+	std::cout << "ShrubberyCreationForm default constructor called for " << this->getName() << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 	: AForm("Shrubbery Creation Form", 145, 137), _target(target) {
-	std::cout << "ShrubberyCreationForm Parameterized constructor called for " << this->getName() << std::endl;
+	std::cout << "ShrubberyCreationForm parameterized constructor called for " << this->getName() << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other)
 	: AForm(other), _target(other._target) {
-	std::cout << "ShrubberyCreationForm Copy constructor called for " << this->getName() << std::endl;
+	std::cout << "ShrubberyCreationForm copy constructor called for " << this->getName() << std::endl;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
@@ -21,12 +21,12 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 		AForm::operator=(other);
 		_target = other._target;
 	}
-	std::cout << "ShrubberyCreationForm Copy assignment operator called for " << this->getName() << std::endl;
+	std::cout << "ShrubberyCreationForm copy assignment operator called for " << this->getName() << std::endl;
 	return *this;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
-	std::cout << "ShrubberyCreationForm Destructor called for " << this->getName() << std::endl;
+	std::cout << "ShrubberyCreationForm destructor called for " << this->getName() << std::endl;
 }
 
 const std::string &ShrubberyCreationForm::getTarget() const {
@@ -40,14 +40,15 @@ void ShrubberyCreationForm::executeAction() const {
 		return;
 	}
 
-	outfile << "       _-_\n"
-		<< "    /~~   ~\\\n"
-		<< " /~~         ~~\\\n"
-		<< "{               }\n"
-		<< " \\  _-     -_  /\n"
-		<< "   ~  \\\\ //  ~\n"
-		<< "_- -   | | _- _\n"
-		<< "  _ -  | |   -_\n"
-		<< "      // \\\\\n";
+	outfile
+			<< "       _-_\n"
+			<< "    /~~   ~\\\n"
+			<< " /~~         ~~\\\n"
+			<< "{               }\n"
+			<< " \\  _-     -_  /\n"
+			<< "   ~  \\\\ //  ~\n"
+			<< "_- -   | | _- _\n"
+			<< "  _ -  | |   -_\n"
+			<< "      // \\\\\n";
 	outfile.close();
 }

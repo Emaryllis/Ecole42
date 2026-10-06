@@ -9,12 +9,12 @@ public:
 	RobotomyRequestForm(const std::string &target);
 	RobotomyRequestForm(const RobotomyRequestForm &other);
 	RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
-	virtual ~RobotomyRequestForm();
+	~RobotomyRequestForm();
 
 	const std::string &getTarget() const;
 
 protected:
-	virtual void executeAction() const;
+	void executeAction() const;
 
 private:
 	std::string _target;

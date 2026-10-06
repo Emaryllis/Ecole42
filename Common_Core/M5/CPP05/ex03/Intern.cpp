@@ -1,25 +1,25 @@
 #include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
-#include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 Intern::Intern() {
-	std::cout << "Intern Default constructor called" << std::endl;
+	std::cout << "Intern default constructor called" << std::endl;
 }
 
 Intern::Intern(const Intern &other) {
-	(void)other;
-	std::cout << "Intern Copy constructor called" << std::endl;
+	(void) other;
+	std::cout << "Intern copy constructor called" << std::endl;
 }
 
 Intern &Intern::operator=(const Intern &other) {
-	(void)other;
-	std::cout << "Intern Copy assignment operator called" << std::endl;
+	(void) other;
+	std::cout << "Intern copy assignment operator called" << std::endl;
 	return *this;
 }
 
 Intern::~Intern() {
-	std::cout << "Intern Destructor called" << std::endl;
+	std::cout << "Intern destructor called" << std::endl;
 }
 
 AForm *Intern::makeForm(const std::string &formName, const std::string &target) {
@@ -49,7 +49,7 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target) 
 			return new PresidentialPardonForm(target);
 		default:
 			std::cerr << "Error: Intern cannot create form \"" << formName
-				<< "\" because it does not exist." << std::endl;
+					<< "\" because it does not exist." << std::endl;
 			return NULL;
 	}
 }

@@ -1,12 +1,12 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat(): _name("Default Bureaucrat"), _grade(150) {
-	std::cout << "Bureaucrat Default constructor called for " << _name << std::endl;
+Bureaucrat::Bureaucrat() : _name("Default Bureaucrat"), _grade(150) {
+	std::cout << "Bureaucrat default constructor called for " << _name << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string &name, const int grade): _name(name) {
-	std::cout << "Bureaucrat Parameterized constructor called for " << _name << std::endl;
+Bureaucrat::Bureaucrat(const std::string &name, const int grade) : _name(name) {
+	std::cout << "Bureaucrat parameterized constructor called for " << _name << std::endl;
 	if (grade < 1)
 		throw GradeTooHighException();
 	if (grade > 150)
@@ -16,19 +16,19 @@ Bureaucrat::Bureaucrat(const std::string &name, const int grade): _name(name) {
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
 	: _name(other._name), _grade(other._grade) {
-	std::cout << "Bureaucrat Copy constructor called for " << _name << std::endl;
+	std::cout << "Bureaucrat copy constructor called for " << _name << std::endl;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
 	if (this != &other) {
 		_grade = other._grade;
 	}
-	std::cout << "Bureaucrat Copy assignment operator called for " << _name << std::endl;
+	std::cout << "Bureaucrat copy assignment operator called for " << _name << std::endl;
 	return *this;
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << "Bureaucrat Destructor called for " << _name << std::endl;
+	std::cout << "Bureaucrat destructor called for " << _name << std::endl;
 }
 
 const std::string &Bureaucrat::getName() const {
@@ -57,7 +57,7 @@ void Bureaucrat::signForm(Form &form) const {
 		std::cout << _name << " signed " << form.getName() << std::endl;
 	} catch (const std::exception &e) {
 		std::cout << _name << " couldn't sign " << form.getName()
-			<< " because " << e.what() << std::endl;
+				<< " because " << e.what() << std::endl;
 	}
 }
 

@@ -2,17 +2,17 @@
 
 PresidentialPardonForm::PresidentialPardonForm()
 	: AForm("Presidential Pardon Form", 25, 5), _target("default_target") {
-	std::cout << "PresidentialPardonForm Default constructor called for " << this->getName() << std::endl;
+	std::cout << "PresidentialPardonForm default constructor called for " << this->getName() << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
 	: AForm("Presidential Pardon Form", 25, 5), _target(target) {
-	std::cout << "PresidentialPardonForm Parameterized constructor called for " << this->getName() << std::endl;
+	std::cout << "PresidentialPardonForm parameterized constructor called for " << this->getName() << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other)
 	: AForm(other), _target(other._target) {
-	std::cout << "PresidentialPardonForm Copy constructor called for " << this->getName() << std::endl;
+	std::cout << "PresidentialPardonForm copy constructor called for " << this->getName() << std::endl;
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other) {
@@ -20,12 +20,12 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 		AForm::operator=(other);
 		_target = other._target;
 	}
-	std::cout << "PresidentialPardonForm Copy assignment operator called for " << this->getName() << std::endl;
+	std::cout << "PresidentialPardonForm copy assignment operator called for " << this->getName() << std::endl;
 	return *this;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
-	std::cout << "PresidentialPardonForm Destructor called for " << this->getName() << std::endl;
+	std::cout << "PresidentialPardonForm destructor called for " << this->getName() << std::endl;
 }
 
 const std::string &PresidentialPardonForm::getTarget() const {
@@ -33,5 +33,5 @@ const std::string &PresidentialPardonForm::getTarget() const {
 }
 
 void PresidentialPardonForm::executeAction() const {
-	std::cout << _target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
+	std::cout << _target << " has been pardoned." << std::endl;
 }

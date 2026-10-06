@@ -1,13 +1,13 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm(): _name("Default AForm"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {
-	std::cout << "AForm Default constructor called for " << _name << std::endl;
+AForm::AForm() : _name("Default AForm"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {
+	std::cout << "AForm default constructor called for " << _name << std::endl;
 }
 
 AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute)
 	: _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
-	std::cout << "AForm Parameterized constructor called for " << _name << std::endl;
+	std::cout << "AForm parameterized constructor called for " << _name << std::endl;
 	if (_gradeToSign < 1 || _gradeToExecute < 1) {
 		throw GradeTooHighException();
 	}
@@ -19,11 +19,11 @@ AForm::AForm(const std::string &name, int gradeToSign, int gradeToExecute)
 AForm::AForm(const AForm &other)
 	: _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign),
 	  _gradeToExecute(other._gradeToExecute) {
-	std::cout << "AForm Copy constructor called for " << _name << std::endl;
+	std::cout << "AForm copy constructor called for " << _name << std::endl;
 }
 
 AForm &AForm::operator=(const AForm &other) {
-	std::cout << "AForm Copy assignment operator called for " << _name << std::endl;
+	std::cout << "AForm copy assignment operator called for " << _name << std::endl;
 	if (this != &other) {
 		_isSigned = other._isSigned;
 	}
@@ -31,7 +31,7 @@ AForm &AForm::operator=(const AForm &other) {
 }
 
 AForm::~AForm() {
-	std::cout << "AForm Destructor called for " << _name << std::endl;
+	std::cout << "AForm destructor called for " << _name << std::endl;
 }
 
 const std::string &AForm::getName() const {
@@ -80,8 +80,10 @@ const char *AForm::FormNotSignedException::what() const throw() {
 }
 
 std::ostream &operator<<(std::ostream &os, const AForm &form) {
-	os << "Form \"" << form.getName() << "\": Signed = " << (form.getIsSigned() ? "Yes" : "No")
-		<< ", Grade Required to Sign = " << form.getGradeToSign()
-		<< ", Grade Required to Execute = " << form.getGradeToExecute() << ".";
+	os << "Form \"" << form.getName() << "\" is "
+			<< (form.getIsSigned() ? "signed" : "not signed")
+			<< ". Grade required to sign: " << form.getGradeToSign()
+			<< ". Grade required to execute: " << form.getGradeToExecute()
+			<< ".";
 	return os;
 }

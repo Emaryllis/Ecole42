@@ -9,12 +9,12 @@ public:
 	PresidentialPardonForm(const std::string &target);
 	PresidentialPardonForm(const PresidentialPardonForm &other);
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
-	virtual ~PresidentialPardonForm();
+	~PresidentialPardonForm();
 
 	const std::string &getTarget() const;
 
 protected:
-	virtual void executeAction() const;
+	void executeAction() const;
 
 private:
 	std::string _target;

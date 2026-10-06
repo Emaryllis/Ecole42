@@ -3,12 +3,12 @@
 
 Form::Form()
 	: _name("Default Form"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {
-	std::cout << "Form Default constructor called for " << _name << std::endl;
+	std::cout << "Form default constructor called for " << _name << std::endl;
 }
 
 Form::Form(const std::string &name, int gradeToSign, int gradeToExecute)
 	: _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
-	std::cout << "Form Parameterized constructor called for " << _name << std::endl;
+	std::cout << "Form parameterized constructor called for " << _name << std::endl;
 	if (_gradeToSign < 1 || _gradeToExecute < 1)
 		throw GradeTooHighException();
 	if (_gradeToSign > 150 || _gradeToExecute > 150)
@@ -20,19 +20,19 @@ Form::Form(const Form &other)
 	  _isSigned(other._isSigned),
 	  _gradeToSign(other._gradeToSign),
 	  _gradeToExecute(other._gradeToExecute) {
-	std::cout << "Form Copy constructor called for " << _name << std::endl;
+	std::cout << "Form copy constructor called for " << _name << std::endl;
 }
 
 Form &Form::operator=(const Form &other) {
 	if (this != &other) {
 		_isSigned = other._isSigned;
 	}
-	std::cout << "Form Copy assignment operator called for " << _name << std::endl;
+	std::cout << "Form copy assignment operator called for " << _name << std::endl;
 	return *this;
 }
 
 Form::~Form() {
-	std::cout << "Form Destructor called for " << _name << std::endl;
+	std::cout << "Form destructor called for " << _name << std::endl;
 }
 
 const std::string &Form::getName() const {
@@ -66,9 +66,10 @@ const char *Form::GradeTooLowException::what() const throw() {
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &form) {
-	os << "Form \"" << form.getName() << "\": "
-		<< "Signed = " << (form.getIsSigned() ? "Yes" : "No")
-		<< ", Grade Required to Sign = " << form.getGradeToSign()
-		<< ", Grade Required to Execute = " << form.getGradeToExecute() << ".";
+	os << "Form \"" << form.getName() << "\" is "
+			<< (form.getIsSigned() ? "signed" : "not signed")
+			<< ". Grade required to sign: " << form.getGradeToSign()
+			<< ". Grade required to execute: " << form.getGradeToExecute()
+			<< ".";
 	return os;
 }

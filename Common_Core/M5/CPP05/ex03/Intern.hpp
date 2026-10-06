@@ -1,9 +1,9 @@
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
-#include "AForm.hpp"
-#include <string>
 #include <iostream>
+#include <string>
+#include "AForm.hpp"
 
 class Intern {
 public:

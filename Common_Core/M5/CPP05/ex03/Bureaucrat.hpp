@@ -1,9 +1,9 @@
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
+#include <exception>
 #include <iostream>
 #include <string>
-#include <exception>
 #include "AForm.hpp"
 
 class AForm;
@@ -22,16 +22,16 @@ public:
 	void incrementGrade();
 	void decrementGrade();
 	void executeForm(AForm const &form) const;
-	void signForm(AForm &form);
+	void signForm(AForm &form) const;
 
 	class GradeTooHighException : public std::exception {
 	public:
-		virtual const char *what() const throw();
+		const char *what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception {
 	public:
-		virtual const char *what() const throw();
+		const char *what() const throw();
 	};
 
 private:

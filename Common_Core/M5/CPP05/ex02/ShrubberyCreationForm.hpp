@@ -9,12 +9,12 @@ public:
 	ShrubberyCreationForm(const std::string &target);
 	ShrubberyCreationForm(const ShrubberyCreationForm &other);
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
-	virtual ~ShrubberyCreationForm();
+	~ShrubberyCreationForm();
 
 	const std::string &getTarget() const;
 
 protected:
-	virtual void executeAction() const;
+	void executeAction() const;
 
 private:
 	std::string _target;
