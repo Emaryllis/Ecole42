@@ -16,7 +16,6 @@ Array<T>::Array(const unsigned int n) : _elements(new T[n]()), _size(n) {
 template <typename T>
 Array<T>::Array(Array const &other) : _elements(NULL), _size(0) {
 	std::cout << "Array Copy Constructor called" << std::endl;
-	*this = other;
 }
 
 template <typename T>
