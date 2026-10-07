@@ -1,13 +1,11 @@
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#ifndef EASY_FIND_HPP
+#define EASY_FIND_HPP
 
 #include <exception>
 
 class NotFoundException : public std::exception {
 public:
-	virtual const char *what() const throw() {
-		return "Element not found in container";
-	}
+	virtual const char *what() const throw();
 };
 
 template<typename T>

@@ -3,47 +3,38 @@
 
 #include <vector>
 #include <exception>
+#include <algorithm>
+
 
 class Span {
 public:
-	Span();
-	Span(unsigned int N);
+	Span(unsigned int n);
 	Span(const Span &other);
-	Span &operator=(const Span &other);
+	Span &operator=(const Span &rhs);
 	~Span();
 
-	void addNumber(int number);
-
-	template<typename InputIterator>
-	void addRange(InputIterator begin, InputIterator end) {
-		if (_numbers.size() + std::distance(begin, end) > _maxSize) {
-			throw FullSpanException();
-		}
-		_numbers.insert(_numbers.end(), begin, end);
-	}
-
+	void addNumber(int num);
 	int shortestSpan() const;
 	int longestSpan() const;
 
-	class FullSpanException : public std::exception {
-	public:
-		virtual const char *what() const throw() {
-			return "Span is full";
-		}
-	};
+	template<typename Iterator>
+	void addNumbers(Iterator begin, Iterator end);
 
-	class NoSpanException : public std::exception {
+	class SpanException : public std::exception {
 	public:
-		virtual const char *what() const throw() {
-			return "Not enough elements to calculate span";
-		}
-	};
+		SpanException(const char *msg) throw();
+		virtual const char *what() const throw();
 
-protected:
+	private:
+		const char *_msg;
+	};
 
 private:
+	Span();
 	unsigned int _maxSize;
 	std::vector<int> _numbers;
 };
+
+#include "Span.tpp"
 
 #endif

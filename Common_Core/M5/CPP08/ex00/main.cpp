@@ -12,14 +12,14 @@ int main() {
 	std::deque<int> deq(arr, arr + 5);
 
 	try {
-		std::vector<int>::iterator itVec = easyfind(vec, 30);
+		const std::vector<int>::iterator itVec = easyfind(vec, 30);
 		std::cout << "Found in vector: " << *itVec << std::endl;
 	} catch (const std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 
 	try {
-		std::list<int>::iterator itLst = easyfind(lst, 50);
+		const std::list<int>::iterator itLst = easyfind(lst, 50);
 		std::cout << "Found in list: " << *itLst << std::endl;
 	} catch (const std::exception &e) {
 		std::cout << e.what() << std::endl;
@@ -28,7 +28,7 @@ int main() {
 	try {
 		easyfind(deq, 99);
 	} catch (const std::exception &e) {
-		std::cout << "Deque search exception: " << e.what() << std::endl;
+		std::cout << "Expected exception while searching in deque: " << e.what() << std::endl;
 	}
 
 	return 0;
