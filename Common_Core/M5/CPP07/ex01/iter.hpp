@@ -3,7 +3,7 @@
 
 #include <cstddef>
 
-template <typename T, typename Func>
+template<typename T, typename Func>
 void iter(T *array, std::size_t const length, Func func) {
 	if (!array) {
 		return;

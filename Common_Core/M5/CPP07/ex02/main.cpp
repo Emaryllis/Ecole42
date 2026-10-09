@@ -9,9 +9,9 @@
  * Modified version of the given main.cpp to test the Array class template.
  * @return
  */
-int main(int, char**) {
+int main(int, char **) {
 	Array<int> numbers(MAX_VAL);
-	int* mirror = new int[MAX_VAL];
+	int *mirror = new int[MAX_VAL];
 	std::srand(std::time(NULL));
 	for (int i = 0; i < MAX_VAL; i++) {
 		const int value = std::rand();
@@ -28,12 +28,12 @@ int main(int, char**) {
 	}
 	try {
 		numbers[-2] = 0;
-	} catch(const std::exception &e) {
+	} catch (const std::exception &e) {
 		std::cerr << e.what() << '\n';
 	}
 	try {
 		numbers[MAX_VAL] = 0;
-	} catch(const std::exception &e) {
+	} catch (const std::exception &e) {
 		std::cerr << e.what() << '\n';
 	}
 

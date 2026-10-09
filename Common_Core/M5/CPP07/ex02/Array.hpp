@@ -3,7 +3,7 @@
 
 #include <exception>
 
-template <typename T>
+template<typename T>
 class Array {
 public:
 	Array();
@@ -19,11 +19,11 @@ public:
 
 	class OutOfBoundsException : public std::exception {
 	public:
-		virtual char const* what() const throw();
+		virtual char const *what() const throw();
 	};
 
 private:
-	T* _elements;
+	T *_elements;
 	unsigned int _size;
 };
 
