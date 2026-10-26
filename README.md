@@ -1,4 +1,5 @@
-<h1 align="center">42Cursus Projects</h1>
+<h1 align="center">42Cursus Projects<br /><img src="https://wakatime.com/badge/user/a834cc3a-cc0a-4aa3-83a4-a825e4e9c3bf/project/018dfb31-895e-4abe-9b91-413fc09f0221.svg?style=plastic&color=863A82&label_color=FEFCFF" alt="WakaTime project time"/></h1>
+
 <table align="center">
   <tr>
     <td align="center"><b>Milestone/Circle</b></td>
