@@ -1,21 +1,21 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap() : ClapTrap("ScavTrap") {
+ScavTrap::ScavTrap(): ClapTrap("ScavTrap") {
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
+ScavTrap::ScavTrap(const std::string &name): ClapTrap(name) {
 	hitPoints = 100;
 	energyPoints = 50;
 	attackDamage = 20;
 	std::cout << "ScavTrap parameterized constructor called for " << this->name << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
+ScavTrap::ScavTrap(const ScavTrap &other): ClapTrap(other) {
 	std::cout << "ScavTrap copy constructor called for " << name << std::endl;
 }
 
@@ -39,7 +39,8 @@ void ScavTrap::attack(const std::string &target) {
 		std::cout << "ScavTrap " << name << " cannot attack because it has no energy points left." << std::endl;
 		return;
 	}
-	std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" <<
+			std::endl;
 	energyPoints--;
 }
 

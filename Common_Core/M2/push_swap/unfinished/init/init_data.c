@@ -9,9 +9,10 @@
 /*   Updated: 2025/09/07 11:24:08 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../utils/libc/libc.h"
-#include "stack.h"
 #include <stdlib.h>
+#include "stack.h"
+
+#include "../utils/libc/libc.h"
 
 static t_stack	init_stack_a(const int *intlist, int count)
 {

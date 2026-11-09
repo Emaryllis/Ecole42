@@ -1,9 +1,9 @@
 #include "Identify.hpp"
+#include <cstdlib>
+#include <iostream>
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
-#include <iostream>
-#include <cstdlib>
 
 Base *generate(void) {
 	const int randomChoice = std::rand() % 3;

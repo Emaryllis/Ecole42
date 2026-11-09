@@ -2,22 +2,22 @@
 #include <string>
 #include "iter.hpp"
 
-template<typename T>
+template <typename T>
 void printElement(T const &x) {
 	std::cout << x << ' ';
 }
 
-template<typename T>
+template <typename T>
 void increment(T &x) {
 	x += 1;
 }
 
-template<typename T>
+template <typename T>
 void appendBang(T &x) {
 	x += '!';
 }
 
-int main(void) {
+int main() {
 	int intArray[] = {1, 2, 3, 4, 5};
 	const std::size_t intLen = sizeof(intArray) / sizeof(intArray[0]);
 

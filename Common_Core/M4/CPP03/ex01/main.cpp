@@ -1,7 +1,6 @@
 #include "ScavTrap.hpp"
 
-int main()
-{
+int main() {
 	ScavTrap scavtrap1("ScavTrap");
 
 	scavtrap1.attack("Dummy1");

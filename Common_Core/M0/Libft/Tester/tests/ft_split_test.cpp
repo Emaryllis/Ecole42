@@ -5,10 +5,10 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
+#include <cstring>
 #include "check.hpp"
 #include "leaks.hpp"
-#include <string.h>
+#include "sigsegv.hpp"
 
 void freeTab(char * * tab)
 {
@@ -114,7 +114,7 @@ int main(void)
 
 	/* 42 */ check(tab[6] == NULL);
 	free(splitme); freeTab(tab); showLeaks();
-	
+
 	write(1, "\n", 1);
 	return (0);
 }

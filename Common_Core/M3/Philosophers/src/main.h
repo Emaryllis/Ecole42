@@ -11,14 +11,15 @@
 /* ************************************************************************** */
 #ifndef MAIN_H
 # define MAIN_H
+# include <errno.h>
+# include <limits.h>
+# include <pthread.h>
+# include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <pthread.h>
-# include <stdbool.h>
+
 # include <sys/time.h>
-# include <limits.h>
-# include <errno.h>
 
 # define RST "\033[0m"
 # define RD "\033[0;31m"

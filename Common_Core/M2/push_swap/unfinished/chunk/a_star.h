@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 #ifndef A_STAR_H
 #define A_STAR_H
-#include "../stack.h"
 #include "move_cost.h"
+
+#include "../stack.h"
 
 // from Star - Move Calculation
 char		**generate_move_sequence(t_move_cost best, const t_stack *from,

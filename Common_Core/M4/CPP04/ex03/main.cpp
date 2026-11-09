@@ -4,7 +4,8 @@
 #include "MateriaSource.hpp"
 
 int main() {
-	IMateriaSource *m_src = new MateriaSource();
+	MateriaSource *source = new MateriaSource();
+	IMateriaSource *m_src = source;
 	Ice *i_src = new Ice();
 	m_src->learnMateria(i_src);
 	delete i_src;
@@ -19,21 +20,21 @@ int main() {
 	tmp = m_src->createMateria("cure");
 	me->equip(tmp);
 
-	ICharacter* bob = new Character("bob");
+	ICharacter *bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
 	delete me;
 	delete bob;
 
 	Character alice("alice");
-	AMateria* saved = m_src->createMateria("ice");
+	AMateria *saved = m_src->createMateria("ice");
 	alice.equip(saved);
 	Character aliceCopy(alice);
 	alice.unequip(0);
 	delete saved;
 	aliceCopy.use(0, alice);
 
-	MateriaSource sourceCopy(*static_cast<MateriaSource*>(m_src));
+	MateriaSource sourceCopy(*source);
 	delete m_src;
 
 	const AMateria *extra = sourceCopy.createMateria("cure");

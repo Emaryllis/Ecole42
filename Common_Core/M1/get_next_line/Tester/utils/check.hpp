@@ -1,8 +1,8 @@
 #ifndef CHECK_HPP
 # define CHECK_HPP
 # include <iostream>
-# include <string>
 # include <sstream>
+# include <string>
 # include "color.hpp"
 
 # ifdef __unix__

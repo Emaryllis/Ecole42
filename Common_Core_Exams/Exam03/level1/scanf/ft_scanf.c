@@ -1,6 +1,6 @@
+#include <ctype.h>
 #include <stdarg.h>
 #include <stdio.h>
-#include <ctype.h>
 // Allowed functions: fgetc, ungetc, ferror, feof, isspace, isdigit, stdin, va_start, va_arg, va_copy, va_end
 
 /** Skips whitespace characters in the file. */

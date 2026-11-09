@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 #ifndef CHUNK_H
 # define CHUNK_H
-# include "../stack.h"
 # include <stdbool.h>
+
+# include "../stack.h"
 
 
 typedef struct s_chunk

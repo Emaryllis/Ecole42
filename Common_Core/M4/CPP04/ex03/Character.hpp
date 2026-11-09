@@ -4,24 +4,25 @@
 #include <string>
 #include "ICharacter.hpp"
 
-class Character : public ICharacter {
+class Character: public ICharacter {
 public:
 	Character();
-	Character(std::string const& name);
-	Character(Character const& other);
-	Character& operator=(Character const& other);
-	~Character();
+	Character(std::string const &name);
+	Character(Character const &other);
+	Character &operator=(Character const &other);
+	virtual ~Character();
 
-	std::string const& getName() const;
-	void equip(AMateria* m);
-	void unequip(int idx);
-	void use(int idx, ICharacter& target);
+	virtual std::string const &getName() const;
+	virtual void equip(AMateria *m);
+	virtual void unequip(int idx);
+	virtual void use(int idx, ICharacter &target);
+
 private:
 	std::string name;
-	AMateria* inventory[4];
+	AMateria *inventory[4];
 
 	void clearInventory();
-	void copyInventory(Character const& other);
+	void copyInventory(Character const &other);
 };
 
 #endif

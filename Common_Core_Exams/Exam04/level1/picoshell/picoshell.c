@@ -1,7 +1,8 @@
-#include <unistd.h>
 #include <stdlib.h>
-#include <sys/wait.h>
 #include <string.h>
+#include <unistd.h>
+
+#include <sys/wait.h>
 
 /**
  * @param cmds A null-terminated command arg array for execvp

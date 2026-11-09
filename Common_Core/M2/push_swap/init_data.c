@@ -9,8 +9,8 @@
 /*   Updated: 2025/10/05 05:24:47 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
 #include <stdint.h>
+#include "push_swap.h"
 
 static void	ft_bzero(void *s, size_t len) // Just memset but always 0
 {

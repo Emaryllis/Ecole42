@@ -1,13 +1,12 @@
 #ifndef LEAK_HPP
 # define LEAK_HPP
-# include <stdlib.h>
-# include <vector>
+# include <algorithm>
+# include <cstdlib>
+# include <dlfcn.h>
 # include <iostream>
 # include <sstream>
 # include <unistd.h>
-# include <stdlib.h>
-# include <dlfcn.h>
-# include <algorithm>
+# include <vector>
 # include "color.hpp"
 
 

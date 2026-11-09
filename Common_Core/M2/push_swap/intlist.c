@@ -9,8 +9,8 @@
 /*   Updated: 2025/10/05 03:09:53 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
 #include <limits.h>
+#include "push_swap.h"
 
 static int	ft_isdigit(int c)
 {

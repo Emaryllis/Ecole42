@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <malloc.h> // change this to <stdlib.h>
 #include <ctype.h>
+#include <malloc.h> // change this to <stdlib.h>
+#include <stdio.h>
 
 typedef struct node {
     enum {

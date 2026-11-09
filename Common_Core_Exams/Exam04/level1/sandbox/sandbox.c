@@ -1,12 +1,13 @@
-#include <unistd.h>
+#include <errno.h>
+#include <signal.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include <signal.h>
-#include <errno.h>
-#include <sys/wait.h>
-#include <sys/types.h>
 #include <string.h>
+#include <unistd.h>
+
+#include <sys/types.h>
+#include <sys/wait.h>
 // Allowed functions: fork, waitpid, exit, alarm, sigaction, kill, printf, strsignal,
 // errno, sigaddset, sigemptyset, sigfillset, sigdelset, sigismember
 

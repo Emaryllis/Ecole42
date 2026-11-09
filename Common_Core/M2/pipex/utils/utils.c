@@ -9,8 +9,9 @@
 /*   Updated: 2025/09/12 02:30:00 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../pipex.h"
 #include <errno.h>
+
+#include "../pipex.h"
 
 static void	free_array(char **arr)
 {

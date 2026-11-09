@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "move_cost.h"
-#include "../libc/libc.h"
 #include "stack.h"
+
+#include "../libc/libc.h"
 
 void list_stack(const t_stack *s)
 {

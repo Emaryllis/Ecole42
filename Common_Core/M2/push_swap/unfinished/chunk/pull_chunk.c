@@ -9,13 +9,14 @@
 /*   Updated: 2025/09/13 22:34:20 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "a_star.h"
-#include "../utils/libc/libc.h"
-#include <stdlib.h>
 #include <limits.h>
+#include <stdlib.h>
+#include "a_star.h"
+
+#include "../utils/libc/libc.h"
 
 static void	free_candidates_move(t_candidates *candidates, char **moves,
-								 int move_count)
+	                                int move_count)
 {
 	int i;
 

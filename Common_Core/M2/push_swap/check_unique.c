@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include <limits.h>
 #include <stdint.h>
+#include "push_swap.h"
 
 // 1. Hash function
 uint32_t	hash(int key, int capacity)

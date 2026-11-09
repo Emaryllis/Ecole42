@@ -1,6 +1,7 @@
-#include "get_next_line.h"
-#include <string.h>
 #include <fcntl.h>
+#include <string.h>
+#include "get_next_line.h"
+
 int main(int c, char **v) {
 	if (c != 2)
 		return 1;

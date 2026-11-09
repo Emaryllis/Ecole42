@@ -5,9 +5,9 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
 #include "check.hpp"
 #include "print.hpp"
+#include "sigsegv.hpp"
 #define TEST_LIMIT 7
 
 int iTest = 1;

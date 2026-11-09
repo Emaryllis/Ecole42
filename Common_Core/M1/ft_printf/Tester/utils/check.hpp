@@ -1,12 +1,12 @@
 #ifndef CHECK_HPP
 # define CHECK_HPP
-# include <iostream>
-# include <string>
-# include <sstream>
-# include <unistd.h>
-# include <climits>
-# include "color.hpp"
-# include "leaks.hpp"
+#include <climits>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <unistd.h>
+#include "color.hpp"
+#include "leaks.hpp"
 
 # ifdef __unix__
 #  include <malloc.h>

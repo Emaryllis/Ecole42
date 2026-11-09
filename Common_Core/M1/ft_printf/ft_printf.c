@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
+
 #include "utils/ft_utils.h"
 
 static int	pointer_check(va_list args)

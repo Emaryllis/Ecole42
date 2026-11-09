@@ -9,11 +9,12 @@
 /*   Updated: 2025/09/07 10:36:57 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "utils/libc/libc.h"
-#include "utils/intlist.h"
-#include <unistd.h>
-#include <stdlib.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include "utils/intlist.h"
+#include "utils/libc/libc.h"
 
 void	init_data(int *intlist, int count);
 

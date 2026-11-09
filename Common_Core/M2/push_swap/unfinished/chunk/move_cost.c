@@ -9,10 +9,11 @@
 /*   Updated: 2025/09/17 01:41:08 by logname          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "a_star.h"
-#include "../utils/libc/libc.h"
-#include <stdlib.h>
 #include <limits.h>
+#include <stdlib.h>
+#include "a_star.h"
+
+#include "../utils/libc/libc.h"
 
 /**
  * Calculates the minimal rotations to bring the element at index

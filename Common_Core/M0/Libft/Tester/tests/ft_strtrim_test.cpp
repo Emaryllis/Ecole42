@@ -5,10 +5,10 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
+#include <cstring>
 #include "check.hpp"
 #include "leaks.hpp"
-#include <string.h>
+#include "sigsegv.hpp"
 
 int iTest = 1;
 int main(void)
@@ -27,7 +27,7 @@ int main(void)
 	s = ft_strtrim("   xxxtripouille   xxx", " x");
 	/* 5 */ check(!strcmp(s, "tripouille"));
 	/* 6 */ mcheck(s, strlen("tripouille") + 1); free(s); showLeaks();
-	
+
 	s = ft_strtrim("   xxx   xxx", " x");
 	/* 7 */ check(!strcmp(s, ""));
 	/* 8 */ mcheck(s, 1); free(s); showLeaks();
@@ -43,11 +43,11 @@ int main(void)
 	s = ft_strtrim("", "");
 	/* 13 */ check(!strcmp(s, ""));
 	/* 14 */ mcheck(s, 1); free(s); showLeaks();
-	
+
 	s = ft_strtrim("abcdba", "acb");
 	/* opsec-infosec 15 */ check(!strcmp(s, "d"));
  	/* opsec-infosec 16 */ mcheck(s, 2); free(s); showLeaks();
-	
+
 	write(1, "\n", 1);
 	return (0);
 }

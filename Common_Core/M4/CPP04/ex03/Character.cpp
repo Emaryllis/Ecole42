@@ -1,30 +1,22 @@
 #include "Character.hpp"
-
 #include <iostream>
 #include <ostream>
-
 #include "AMateria.hpp"
 
-Character::Character() : name("Character") {
-	for (int i = 0; i < 4; ++i)
-		inventory[i] = NULL;
+Character::Character(): name("Character"), inventory() {
 	std::cout << "Character default constructor called" << std::endl;
 }
 
-Character::Character(std::string const& name) : name(name) {
-	for (int i = 0; i < 4; ++i)
-		inventory[i] = NULL;
+Character::Character(std::string const &name): name(name), inventory() {
 	std::cout << "Character parameterized constructor called for " << name << std::endl;
 }
 
-Character::Character(Character const& other) : name(other.name) {
-	for (int i = 0; i < 4; ++i)
-		inventory[i] = NULL;
+Character::Character(Character const &other): name(other.name), inventory() {
 	copyInventory(other);
 	std::cout << "Character copy constructor called for " << name << std::endl;
 }
 
-Character& Character::operator=(Character const& other) {
+Character &Character::operator=(Character const &other) {
 	if (this != &other) {
 		clearInventory();
 		name = other.name;
@@ -39,11 +31,11 @@ Character::~Character() {
 	std::cout << "Character destructor called for " << name << std::endl;
 }
 
-std::string const& Character::getName() const {
+std::string const &Character::getName() const {
 	return name;
 }
 
-void Character::equip(AMateria* m) {
+void Character::equip(AMateria *m) {
 	if (!m)
 		return;
 	for (int i = 0; i < 4; ++i) {
@@ -60,7 +52,7 @@ void Character::unequip(int idx) {
 	inventory[idx] = NULL;
 }
 
-void Character::use(int idx, ICharacter& target) {
+void Character::use(int idx, ICharacter &target) {
 	if (idx < 0 || idx >= 4)
 		return;
 	if (inventory[idx])
@@ -76,7 +68,7 @@ void Character::clearInventory() {
 	}
 }
 
-void Character::copyInventory(Character const& other) {
+void Character::copyInventory(Character const &other) {
 	for (int i = 0; i < 4; ++i) {
 		if (other.inventory[i])
 			inventory[i] = other.inventory[i]->clone();

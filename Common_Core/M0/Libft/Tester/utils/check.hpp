@@ -1,16 +1,16 @@
 #ifndef CHECK_HPP
 # define CHECK_HPP
-# include <iostream>
-# include <string>
-# include <sstream>
-# include <unistd.h>
-# include "color.hpp"
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <unistd.h>
+#include "color.hpp"
 
 # ifdef __unix__
 #  include <malloc.h>
 # endif
 # ifdef __APPLE__
-#  include <stdlib.h>
+#  include <cstdlib>
 #  include <malloc/malloc.h>
 # endif
 

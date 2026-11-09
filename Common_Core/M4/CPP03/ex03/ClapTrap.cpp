@@ -1,11 +1,11 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
-ClapTrap::ClapTrap() : name("ClapTrap"), hitPoints(10), energyPoints(10), attackDamage(0) {
+ClapTrap::ClapTrap(): name("ClapTrap"), hitPoints(10), energyPoints(10), attackDamage(0) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
+ClapTrap::ClapTrap(const std::string &name): name(name), hitPoints(10), energyPoints(10), attackDamage(0) {
 	std::cout << "ClapTrap parameterized constructor called for " << this->name << std::endl;
 }
 
@@ -38,7 +38,8 @@ void ClapTrap::attack(const std::string &target) {
 		std::cout << "ClapTrap " << name << " cannot attack because it has no energy points left." << std::endl;
 		return;
 	}
-	std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" <<
+			std::endl;
 	energyPoints--;
 }
 
@@ -51,7 +52,8 @@ void ClapTrap::takeDamage(unsigned int amount) {
 		hitPoints = 0;
 	else
 		hitPoints -= amount;
-	std::cout << "ClapTrap " << name << " takes " << amount << " points of damage! Current hit points: " << hitPoints << std::endl;
+	std::cout << "ClapTrap " << name << " takes " << amount << " points of damage! Current hit points: " << hitPoints <<
+			std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
@@ -65,5 +67,6 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	}
 	hitPoints += amount;
 	energyPoints--;
-	std::cout << "ClapTrap " << name << " is repaired by " << amount << " points! Current hit points: " << hitPoints << std::endl;
+	std::cout << "ClapTrap " << name << " is repaired by " << amount << " points! Current hit points: " << hitPoints <<
+			std::endl;
 }

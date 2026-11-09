@@ -9,8 +9,8 @@
 /*   Updated: 2024/02/29 14:10:56 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_utils.h"
 #include <unistd.h>
+#include "ft_utils.h"
 
 int	ft_putchar(char c)
 {

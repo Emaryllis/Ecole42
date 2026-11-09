@@ -6,10 +6,9 @@ extern "C"
 }
 
 #include "gnl.hpp"
-#include "color.hpp"
+#include <cstring>
 #include "check.hpp"
-
-#include <string.h>
+#include "color.hpp"
 
 extern int iTest;
 

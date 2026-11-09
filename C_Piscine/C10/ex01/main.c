@@ -9,8 +9,8 @@
 /*   Updated: 2024/02/29 14:10:56 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 void	ft_puterr(char *str)
 {

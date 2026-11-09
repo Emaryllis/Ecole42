@@ -9,10 +9,12 @@
 /*   Updated: 2025/09/09 20:30:49 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "utils/libc/libc.h"
-#include "chunk/chunk.h"
-#include "chunk/a_star.h"
 #include <stdlib.h>
+
+#include "chunk/a_star.h"
+#include "chunk/chunk.h"
+
+#include "utils/libc/libc.h"
 
 #define LOCAL_OPT_SIZE 12  // Maximum chunk top for full A* search
 

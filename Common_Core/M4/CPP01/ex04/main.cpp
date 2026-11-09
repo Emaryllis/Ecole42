@@ -1,11 +1,11 @@
-#include <iostream>
-#include <fstream>
-#include <string>
 #include <cstring>
+#include <fstream>
+#include <iostream>
+#include <string>
 
 void replace(std::ofstream &re, std::ifstream &fs,
-			const std::string &oldStr,
-			const std::string &newStr) {
+             const std::string &oldStr,
+             const std::string &newStr) {
 	std::string line;
 	bool firstLine = true;
 	while (std::getline(fs, line)) {

@@ -1,9 +1,9 @@
-#include <cstdlib>
-#include <cmath>
-#include <limits>
-#include <cctype>
-#include <iostream>
 #include "ScalarConverter.hpp"
+#include <cctype>
+#include <cmath>
+#include <cstdlib>
+#include <iostream>
+#include <limits>
 
 ScalarConverter::ScalarConverter() {
 	std::cout << "ScalarConverter default constructor called" << std::endl;

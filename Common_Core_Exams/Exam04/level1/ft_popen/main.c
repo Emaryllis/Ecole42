@@ -1,10 +1,11 @@
+#include <dirent.h>
+#include <fcntl.h>
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+
 #include <sys/wait.h>
-#include <fcntl.h>
-#include <dirent.h>
 
 // Include the ft_popen function prototype
 int ft_popen(const char *file, char *const argv[], char type);

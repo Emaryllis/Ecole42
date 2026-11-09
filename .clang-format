@@ -1,4 +1,5 @@
 Language: Cpp
+Standard: c++03
 AlignOperands: true
 BreakBeforeBraces: Allman
 ColumnLimit: 80

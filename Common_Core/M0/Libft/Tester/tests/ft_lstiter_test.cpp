@@ -5,10 +5,10 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
+#include <cstring>
 #include "check.hpp"
 #include "leaks.hpp"
-#include <string.h>
+#include "sigsegv.hpp"
 
 void freeList(t_list *head) {if (head) freeList((t_list *)head->next); free(head);}
 void addOne(void * p) {++*(int*)p;}

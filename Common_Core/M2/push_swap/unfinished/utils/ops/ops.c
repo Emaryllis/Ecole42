@@ -9,8 +9,9 @@
 /*   Updated: 2025/09/11 18:35:03 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../libc/libc.h"
 #include "../../stack.h"
+
+#include "../libc/libc.h"
 
 void	push(t_stack *from, t_stack *to)
 {

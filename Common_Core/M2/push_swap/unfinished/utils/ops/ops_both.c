@@ -9,8 +9,9 @@
 /*   Updated: 2025/09/11 22:22:12 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../libc/libc.h"
 #include "../../stack.h"
+
+#include "../libc/libc.h"
 
 void	swap_both(t_stack *a, t_stack *b)
 {

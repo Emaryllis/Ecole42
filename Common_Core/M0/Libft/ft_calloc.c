@@ -9,9 +9,9 @@
 /*   Updated: 2025/09/11 18:45:29 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdint.h>
 #include <stddef.h>
+#include <stdint.h>
+#include <stdlib.h>
 
 static void	ft_bzero(void *s, size_t len) // Just memset but always 0
 {

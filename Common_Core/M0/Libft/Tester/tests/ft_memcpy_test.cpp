@@ -5,17 +5,17 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
+#include <cstring>
 #include "check.hpp"
 #include "leaks.hpp"
-#include <string.h>
+#include "sigsegv.hpp"
 
 int iTest = 1;
 int main(void)
 {
 	signal(SIGSEGV, sigsegv);
 	title("ft_memcpy\t: ")
-	
+
 	char dest[100];
 	memset(dest, 'A', 100);
 	ft_memcpy(dest, "coucou", 0);

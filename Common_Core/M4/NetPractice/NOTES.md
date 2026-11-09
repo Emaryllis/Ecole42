@@ -1,37 +1,43 @@
 # NetPractice Cheat Sheet
+
 Last Updated: 2 September 2026 (NetPractice version 1.9)
 
-The examples given in the explained answers section in this cheat sheet may change in future versions, hence it is better to follow the rules & explanations provided along with the answers.
+The examples given in the explained answers section in this cheat sheet may change in future versions, hence it is
+better to follow the rules & explanations provided along with the answers.
 
 ## Table of contents:
+
 - Notes
-  - [NetPractice specific rules](#rules)
-  - [IP Class Ranges](#ip-class-ranges)
-  - [Subnet Mask](#subnet-mask)
+	- [NetPractice specific rules](#rules)
+	- [IP Class Ranges](#ip-class-ranges)
+	- [Subnet Mask](#subnet-mask)
 - [Explained Answers](#explained-answers)
-  - [Level 6](#level-6)
-  - [Level 7](#level-7)
-  - [Level 8](#level-8)
-  - [Level 9](#level-9)
-  - [Level 10](#level-10)
+	- [Level 6](#level-6)
+	- [Level 7](#level-7)
+	- [Level 8](#level-8)
+	- [Level 9](#level-9)
+	- [Level 10](#level-10)
 
 ## Rules:
+
 - Switches: Connects devices with the same mask & IPs that are in the same block. (A blind connecting wire)
 - Router Interfaces: Two interfaces on the same router should never be in the same subnet block.
-- Router Gateway: A router gateway IP must be the IP of the directly connected next-hop router interface on the path to the destination.
+- Router Gateway: A router gateway IP must be the IP of the directly connected next-hop router interface on the path to
+  the destination.
 - Host Route Gateway: Must be the same IP as the immediate interface before the router.
 - Generic Routes: Always try default routes first (default or 0.0.0.0/0)
 
 ## IP Class Ranges
+
 Source: [Wikipedia - IP Addresses](https://en.wikipedia.org/wiki/IP_address)
 
-| Class # |       Public IP Range       |       Private IP Range        | Subnet Mask (CIDR)  |         No of Networks         |
-|:-------:|:---------------------------:|:-----------------------------:|:-------------------:|:------------------------------:|
-|    A    |  1.0.0.0 - 126.255.255.255  |   10.0.0.0 - 10.255.255.255   |   255.0.0.0 (/8)    |              126               |
-|    B    | 128.0.0.0 - 191.255.255.255 |  172.16.0.0 - 172.31.255.255  |  255.255.0.0 (/16)  |           2,097,150            |
-|    C    | 192.0.0.0 - 223.255.255.255 | 192.168.0.0 - 192.168.255.255 | 255.255.255.0 (/24) |           16,777,214           |
-|    D    | 224.0.0.0 - 239.255.255.255 |              N/A              |         N/A         |          Multicasting          |
-|    E    | 240.0.0.0 - 255.255.255.255 |              N/A              |         N/A         |     Research/Experimental      |
+| Class # |       Public IP Range       |       Private IP Range        | Subnet Mask (CIDR)  |    No of Networks     |
+|:-------:|:---------------------------:|:-----------------------------:|:-------------------:|:---------------------:|
+|    A    |  1.0.0.0 - 126.255.255.255  |   10.0.0.0 - 10.255.255.255   |   255.0.0.0 (/8)    |          126          |
+|    B    | 128.0.0.0 - 191.255.255.255 |  172.16.0.0 - 172.31.255.255  |  255.255.0.0 (/16)  |       2,097,150       |
+|    C    | 192.0.0.0 - 223.255.255.255 | 192.168.0.0 - 192.168.255.255 | 255.255.255.0 (/24) |      16,777,214       |
+|    D    | 224.0.0.0 - 239.255.255.255 |              N/A              |         N/A         |     Multicasting      |
+|    E    | 240.0.0.0 - 255.255.255.255 |              N/A              |         N/A         | Research/Experimental |
 
 <details>
   <summary>
@@ -60,205 +66,212 @@ Source: [Wikipedia - IP Addresses](https://en.wikipedia.org/wiki/IP_address)
     </table>
   </summary>
 
-  For /24, first 3 octets must match. For /16, first 2 octets. For /8, first octet.
-  The octets that are 0 in the table above can be anywhere from 0-255.
-  ## How to check a match
-  1. Find the block size from the mask (table above).
-  2. Divide the relevant octet by block size, round down → that's the block start.
-  3. Both IPs must fall in the same block.
-  4. First IP in block = network address (unusable). Last IP in block = broadcast (unusable). Everything between = usable.
-  5. The only exception to Step 4 is if the CIDR is /31, then each set of 2 ips serve as a point-to-point link.
-  **Example:** mask `.224` (block 32), IPs `.1` and `.222`
-  - `.1` → block `0–31`
-  - `.222` → block `192–223`
-  - Different blocks → mismatch. Fix by moving one IP into the other's block.
-    <table>
-      <tr valign="top">
-        <td>
-          <p><b>/25 - 2 Subnets - 126 Hosts/Subnet</b></p>
-          <table>
-            <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
-            <tr><td>.0</td><td>.1-.126</td><td>.127</td></tr>
-            <tr><td>.128</td><td>.129-.254</td><td>.255</td></tr>
-          </table>
-        </td>
-        <td rowspan="5">
-          <p><b>/30 - 64 Subnets - 2 Hosts/Subnet</b></p>
-          <table>
-            <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
-            <tr><td>.0</td><td>.1-.2</td><td>.3</td></tr>
-            <tr><td>.4</td><td>.5-.6</td><td>.7</td></tr>
-            <tr><td>.8</td><td>.9-.10</td><td>.11</td></tr>
-            <tr><td>.12</td><td>.13-.14</td><td>.15</td></tr>
-            <tr><td>.16</td><td>.17-.18</td><td>.19</td></tr>
-            <tr><td>.20</td><td>.21-.22</td><td>.23</td></tr>
-            <tr><td>.24</td><td>.25-.26</td><td>.27</td></tr>
-            <tr><td>.28</td><td>.29-.30</td><td>.31</td></tr>
-            <tr><td>.32</td><td>.33-.34</td><td>.35</td></tr>
-            <tr><td>.36</td><td>.37-.38</td><td>.39</td></tr>
-            <tr><td>.40</td><td>.41-.42</td><td>.43</td></tr>
-            <tr><td>.44</td><td>.45-.46</td><td>.47</td></tr>
-            <tr><td>.48</td><td>.49-.50</td><td>.51</td></tr>
-            <tr><td>.52</td><td>.53-.54</td><td>.55</td></tr>
-            <tr><td>.56</td><td>.57-.58</td><td>.59</td></tr>
-            <tr><td>.60</td><td>.61-.62</td><td>.63</td></tr>
-            <tr><td>.64</td><td>.65-.66</td><td>.67</td></tr>
-            <tr><td>.68</td><td>.69-.70</td><td>.71</td></tr>
-            <tr><td>.72</td><td>.73-.74</td><td>.75</td></tr>
-            <tr><td>.76</td><td>.77-.78</td><td>.79</td></tr>
-            <tr><td>.80</td><td>.81-.82</td><td>.83</td></tr>
-            <tr><td>.84</td><td>.85-.86</td><td>.87</td></tr>
-            <tr><td>.88</td><td>.89-.90</td><td>.91</td></tr>
-            <tr><td>.92</td><td>.93-.94</td><td>.95</td></tr>
-            <tr><td>.96</td><td>.97-.98</td><td>.99</td></tr>
-            <tr><td>.100</td><td>.101-.102</td><td>.103</td></tr>
-            <tr><td>.104</td><td>.105-.106</td><td>.107</td></tr>
-            <tr><td>.108</td><td>.109-.110</td><td>.111</td></tr>
-            <tr><td>.112</td><td>.113-.114</td><td>.115</td></tr>
-            <tr><td>.116</td><td>.117-.118</td><td>.119</td></tr>
-            <tr><td>.120</td><td>.121-.122</td><td>.123</td></tr>
-            <tr><td>.124</td><td>.125-.126</td><td>.127</td></tr>
-            <tr><td>.128</td><td>.129-.130</td><td>.131</td></tr>
-            <tr><td>.132</td><td>.133-.134</td><td>.135</td></tr>
-            <tr><td>.136</td><td>.137-.138</td><td>.139</td></tr>
-            <tr><td>.140</td><td>.141-.142</td><td>.143</td></tr>
-            <tr><td>.144</td><td>.145-.146</td><td>.147</td></tr>
-            <tr><td>.148</td><td>.149-.150</td><td>.151</td></tr>
-            <tr><td>.152</td><td>.153-.154</td><td>.155</td></tr>
-            <tr><td>.156</td><td>.157-.158</td><td>.159</td></tr>
-            <tr><td>.160</td><td>.161-.162</td><td>.163</td></tr>
-            <tr><td>.164</td><td>.165-.166</td><td>.167</td></tr>
-            <tr><td>.168</td><td>.169-.170</td><td>.171</td></tr>
-            <tr><td>.172</td><td>.173-.174</td><td>.175</td></tr>
-            <tr><td>.176</td><td>.177-.178</td><td>.179</td></tr>
-            <tr><td>.180</td><td>.181-.182</td><td>.183</td></tr>
-            <tr><td>.184</td><td>.185-.186</td><td>.187</td></tr>
-            <tr><td>.188</td><td>.189-.190</td><td>.191</td></tr>
-            <tr><td>.192</td><td>.193-.194</td><td>.195</td></tr>
-            <tr><td>.196</td><td>.197-.198</td><td>.199</td></tr>
-            <tr><td>.200</td><td>.201-.202</td><td>.203</td></tr>
-            <tr><td>.204</td><td>.205-.206</td><td>.207</td></tr>
-            <tr><td>.208</td><td>.209-.210</td><td>.211</td></tr>
-            <tr><td>.212</td><td>.213-.214</td><td>.215</td></tr>
-            <tr><td>.216</td><td>.217-.218</td><td>.219</td></tr>
-            <tr><td>.220</td><td>.221-.222</td><td>.223</td></tr>
-            <tr><td>.224</td><td>.225-.226</td><td>.227</td></tr>
-            <tr><td>.228</td><td>.229-.230</td><td>.231</td></tr>
-            <tr><td>.232</td><td>.233-.234</td><td>.235</td></tr>
-            <tr><td>.236</td><td>.237-.238</td><td>.239</td></tr>
-            <tr><td>.240</td><td>.241-.242</td><td>.243</td></tr>
-            <tr><td>.244</td><td>.245-.246</td><td>.247</td></tr>
-            <tr><td>.248</td><td>.249-.250</td><td>.251</td></tr>
-            <tr><td>.252</td><td>.253-.254</td><td>.255</td></tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p><b>/26 - 4 Subnets - 62 Hosts/Subnet</b></p>
-          <table>
-            <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
-            <tr><td>.0</td><td>.1-.62</td><td>.63</td></tr>
-            <tr><td>.64</td><td>.65-.126</td><td>.127</td></tr>
-            <tr><td>.128</td><td>.129-.190</td><td>.191</td></tr>
-            <tr><td>.192</td><td>.193-.254</td><td>.255</td></tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p><b>/27 - 8 Subnets - 30 Hosts/Subnet</b></p>
-          <table>
-            <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
-            <tr><td>.0</td><td>.1-.30</td><td>.31</td></tr>
-            <tr><td>.32</td><td>.33-.62</td><td>.63</td></tr>
-            <tr><td>.64</td><td>.65-.94</td><td>.95</td></tr>
-            <tr><td>.96</td><td>.97-.126</td><td>.127</td></tr>
-            <tr><td>.128</td><td>.129-.158</td><td>.159</td></tr>
-            <tr><td>.160</td><td>.161-.190</td><td>.191</td></tr>
-            <tr><td>.192</td><td>.193-.222</td><td>.223</td></tr>
-            <tr><td>.224</td><td>.225-.254</td><td>.255</td></tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p><b>/28 - 16 Subnets - 14 Hosts/Subnet</b></p>
-          <table>
-            <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
-            <tr><td>.0</td><td>.1-.14</td><td>.15</td></tr>
-            <tr><td>.16</td><td>.17-.30</td><td>.31</td></tr>
-            <tr><td>.32</td><td>.33-.46</td><td>.47</td></tr>
-            <tr><td>.48</td><td>.49-.62</td><td>.63</td></tr>
-            <tr><td>.64</td><td>.65-.78</td><td>.79</td></tr>
-            <tr><td>.80</td><td>.81-.94</td><td>.95</td></tr>
-            <tr><td>.96</td><td>.97-.110</td><td>.111</td></tr>
-            <tr><td>.112</td><td>.113-.126</td><td>.127</td></tr>
-            <tr><td>.128</td><td>.129-.142</td><td>.143</td></tr>
-            <tr><td>.144</td><td>.145-.158</td><td>.159</td></tr>
-            <tr><td>.160</td><td>.161-.174</td><td>.175</td></tr>
-            <tr><td>.176</td><td>.177-.190</td><td>.191</td></tr>
-            <tr><td>.192</td><td>.193-.206</td><td>.207</td></tr>
-            <tr><td>.208</td><td>.209-.222</td><td>.223</td></tr>
-            <tr><td>.224</td><td>.225-.238</td><td>.239</td></tr>
-            <tr><td>.240</td><td>.241-.254</td><td>.255</td></tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p><b>/29 - 32 Subnets - 6 Hosts/Subnet</b></p>
-          <table>
-            <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
-            <tr><td>.0</td><td>.1-.6</td><td>.7</td></tr>
-            <tr><td>.8</td><td>.9-.14</td><td>.15</td></tr>
-            <tr><td>.16</td><td>.17-.22</td><td>.23</td></tr>
-            <tr><td>.24</td><td>.25-.30</td><td>.31</td></tr>
-            <tr><td>.32</td><td>.33-.38</td><td>.39</td></tr>
-            <tr><td>.40</td><td>.41-.46</td><td>.47</td></tr>
-            <tr><td>.48</td><td>.49-.54</td><td>.55</td></tr>
-            <tr><td>.56</td><td>.57-.62</td><td>.63</td></tr>
-            <tr><td>.64</td><td>.65-.70</td><td>.71</td></tr>
-            <tr><td>.72</td><td>.73-.78</td><td>.79</td></tr>
-            <tr><td>.80</td><td>.81-.86</td><td>.87</td></tr>
-            <tr><td>.88</td><td>.89-.94</td><td>.95</td></tr>
-            <tr><td>.96</td><td>.97-.102</td><td>.103</td></tr>
-            <tr><td>.104</td><td>.105-.110</td><td>.111</td></tr>
-            <tr><td>.112</td><td>.113-.118</td><td>.119</td></tr>
-            <tr><td>.120</td><td>.121-.126</td><td>.127</td></tr>
-            <tr><td>.128</td><td>.129-.134</td><td>.135</td></tr>
-            <tr><td>.136</td><td>.137-.142</td><td>.143</td></tr>
-            <tr><td>.144</td><td>.145-.150</td><td>.151</td></tr>
-            <tr><td>.152</td><td>.153-.158</td><td>.159</td></tr>
-            <tr><td>.160</td><td>.161-.166</td><td>.167</td></tr>
-            <tr><td>.168</td><td>.169-.174</td><td>.175</td></tr>
-            <tr><td>.176</td><td>.177-.182</td><td>.183</td></tr>
-            <tr><td>.184</td><td>.185-.190</td><td>.191</td></tr>
-            <tr><td>.192</td><td>.193-.198</td><td>.199</td></tr>
-            <tr><td>.200</td><td>.201-.206</td><td>.207</td></tr>
-            <tr><td>.208</td><td>.209-.214</td><td>.215</td></tr>
-            <tr><td>.216</td><td>.217-.222</td><td>.223</td></tr>
-            <tr><td>.224</td><td>.225-.230</td><td>.231</td></tr>
-            <tr><td>.232</td><td>.233-.238</td><td>.239</td></tr>
-            <tr><td>.240</td><td>.241-.246</td><td>.247</td></tr>
-            <tr><td>.248</td><td>.249-.254</td><td>.255</td></tr>
-          </table>
-        </td>
-      </tr>
-    </table>
+For /24, first 3 octets must match. For /16, first 2 octets. For /8, first octet.
+The octets that are 0 in the table above can be anywhere from 0-255.
+
+## How to check a match
+
+1. Find the block size from the mask (table above).
+2. Divide the relevant octet by block size, round down → that's the block start.
+3. Both IPs must fall in the same block.
+4. First IP in block = network address (unusable). Last IP in block = broadcast (unusable). Everything between = usable.
+5. The only exception to Step 4 is if the CIDR is /31, then each set of 2 ips serve as a point-to-point link.
+   **Example:** mask `.224` (block 32), IPs `.1` and `.222`
+
+- `.1` → block `0–31`
+- `.222` → block `192–223`
+- Different blocks → mismatch. Fix by moving one IP into the other's block.
+  <table>
+    <tr valign="top">
+      <td>
+        <p><b>/25 - 2 Subnets - 126 Hosts/Subnet</b></p>
+        <table>
+          <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
+          <tr><td>.0</td><td>.1-.126</td><td>.127</td></tr>
+          <tr><td>.128</td><td>.129-.254</td><td>.255</td></tr>
+        </table>
+      </td>
+      <td rowspan="5">
+        <p><b>/30 - 64 Subnets - 2 Hosts/Subnet</b></p>
+        <table>
+          <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
+          <tr><td>.0</td><td>.1-.2</td><td>.3</td></tr>
+          <tr><td>.4</td><td>.5-.6</td><td>.7</td></tr>
+          <tr><td>.8</td><td>.9-.10</td><td>.11</td></tr>
+          <tr><td>.12</td><td>.13-.14</td><td>.15</td></tr>
+          <tr><td>.16</td><td>.17-.18</td><td>.19</td></tr>
+          <tr><td>.20</td><td>.21-.22</td><td>.23</td></tr>
+          <tr><td>.24</td><td>.25-.26</td><td>.27</td></tr>
+          <tr><td>.28</td><td>.29-.30</td><td>.31</td></tr>
+          <tr><td>.32</td><td>.33-.34</td><td>.35</td></tr>
+          <tr><td>.36</td><td>.37-.38</td><td>.39</td></tr>
+          <tr><td>.40</td><td>.41-.42</td><td>.43</td></tr>
+          <tr><td>.44</td><td>.45-.46</td><td>.47</td></tr>
+          <tr><td>.48</td><td>.49-.50</td><td>.51</td></tr>
+          <tr><td>.52</td><td>.53-.54</td><td>.55</td></tr>
+          <tr><td>.56</td><td>.57-.58</td><td>.59</td></tr>
+          <tr><td>.60</td><td>.61-.62</td><td>.63</td></tr>
+          <tr><td>.64</td><td>.65-.66</td><td>.67</td></tr>
+          <tr><td>.68</td><td>.69-.70</td><td>.71</td></tr>
+          <tr><td>.72</td><td>.73-.74</td><td>.75</td></tr>
+          <tr><td>.76</td><td>.77-.78</td><td>.79</td></tr>
+          <tr><td>.80</td><td>.81-.82</td><td>.83</td></tr>
+          <tr><td>.84</td><td>.85-.86</td><td>.87</td></tr>
+          <tr><td>.88</td><td>.89-.90</td><td>.91</td></tr>
+          <tr><td>.92</td><td>.93-.94</td><td>.95</td></tr>
+          <tr><td>.96</td><td>.97-.98</td><td>.99</td></tr>
+          <tr><td>.100</td><td>.101-.102</td><td>.103</td></tr>
+          <tr><td>.104</td><td>.105-.106</td><td>.107</td></tr>
+          <tr><td>.108</td><td>.109-.110</td><td>.111</td></tr>
+          <tr><td>.112</td><td>.113-.114</td><td>.115</td></tr>
+          <tr><td>.116</td><td>.117-.118</td><td>.119</td></tr>
+          <tr><td>.120</td><td>.121-.122</td><td>.123</td></tr>
+          <tr><td>.124</td><td>.125-.126</td><td>.127</td></tr>
+          <tr><td>.128</td><td>.129-.130</td><td>.131</td></tr>
+          <tr><td>.132</td><td>.133-.134</td><td>.135</td></tr>
+          <tr><td>.136</td><td>.137-.138</td><td>.139</td></tr>
+          <tr><td>.140</td><td>.141-.142</td><td>.143</td></tr>
+          <tr><td>.144</td><td>.145-.146</td><td>.147</td></tr>
+          <tr><td>.148</td><td>.149-.150</td><td>.151</td></tr>
+          <tr><td>.152</td><td>.153-.154</td><td>.155</td></tr>
+          <tr><td>.156</td><td>.157-.158</td><td>.159</td></tr>
+          <tr><td>.160</td><td>.161-.162</td><td>.163</td></tr>
+          <tr><td>.164</td><td>.165-.166</td><td>.167</td></tr>
+          <tr><td>.168</td><td>.169-.170</td><td>.171</td></tr>
+          <tr><td>.172</td><td>.173-.174</td><td>.175</td></tr>
+          <tr><td>.176</td><td>.177-.178</td><td>.179</td></tr>
+          <tr><td>.180</td><td>.181-.182</td><td>.183</td></tr>
+          <tr><td>.184</td><td>.185-.186</td><td>.187</td></tr>
+          <tr><td>.188</td><td>.189-.190</td><td>.191</td></tr>
+          <tr><td>.192</td><td>.193-.194</td><td>.195</td></tr>
+          <tr><td>.196</td><td>.197-.198</td><td>.199</td></tr>
+          <tr><td>.200</td><td>.201-.202</td><td>.203</td></tr>
+          <tr><td>.204</td><td>.205-.206</td><td>.207</td></tr>
+          <tr><td>.208</td><td>.209-.210</td><td>.211</td></tr>
+          <tr><td>.212</td><td>.213-.214</td><td>.215</td></tr>
+          <tr><td>.216</td><td>.217-.218</td><td>.219</td></tr>
+          <tr><td>.220</td><td>.221-.222</td><td>.223</td></tr>
+          <tr><td>.224</td><td>.225-.226</td><td>.227</td></tr>
+          <tr><td>.228</td><td>.229-.230</td><td>.231</td></tr>
+          <tr><td>.232</td><td>.233-.234</td><td>.235</td></tr>
+          <tr><td>.236</td><td>.237-.238</td><td>.239</td></tr>
+          <tr><td>.240</td><td>.241-.242</td><td>.243</td></tr>
+          <tr><td>.244</td><td>.245-.246</td><td>.247</td></tr>
+          <tr><td>.248</td><td>.249-.250</td><td>.251</td></tr>
+          <tr><td>.252</td><td>.253-.254</td><td>.255</td></tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>/26 - 4 Subnets - 62 Hosts/Subnet</b></p>
+        <table>
+          <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
+          <tr><td>.0</td><td>.1-.62</td><td>.63</td></tr>
+          <tr><td>.64</td><td>.65-.126</td><td>.127</td></tr>
+          <tr><td>.128</td><td>.129-.190</td><td>.191</td></tr>
+          <tr><td>.192</td><td>.193-.254</td><td>.255</td></tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>/27 - 8 Subnets - 30 Hosts/Subnet</b></p>
+        <table>
+          <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
+          <tr><td>.0</td><td>.1-.30</td><td>.31</td></tr>
+          <tr><td>.32</td><td>.33-.62</td><td>.63</td></tr>
+          <tr><td>.64</td><td>.65-.94</td><td>.95</td></tr>
+          <tr><td>.96</td><td>.97-.126</td><td>.127</td></tr>
+          <tr><td>.128</td><td>.129-.158</td><td>.159</td></tr>
+          <tr><td>.160</td><td>.161-.190</td><td>.191</td></tr>
+          <tr><td>.192</td><td>.193-.222</td><td>.223</td></tr>
+          <tr><td>.224</td><td>.225-.254</td><td>.255</td></tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>/28 - 16 Subnets - 14 Hosts/Subnet</b></p>
+        <table>
+          <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
+          <tr><td>.0</td><td>.1-.14</td><td>.15</td></tr>
+          <tr><td>.16</td><td>.17-.30</td><td>.31</td></tr>
+          <tr><td>.32</td><td>.33-.46</td><td>.47</td></tr>
+          <tr><td>.48</td><td>.49-.62</td><td>.63</td></tr>
+          <tr><td>.64</td><td>.65-.78</td><td>.79</td></tr>
+          <tr><td>.80</td><td>.81-.94</td><td>.95</td></tr>
+          <tr><td>.96</td><td>.97-.110</td><td>.111</td></tr>
+          <tr><td>.112</td><td>.113-.126</td><td>.127</td></tr>
+          <tr><td>.128</td><td>.129-.142</td><td>.143</td></tr>
+          <tr><td>.144</td><td>.145-.158</td><td>.159</td></tr>
+          <tr><td>.160</td><td>.161-.174</td><td>.175</td></tr>
+          <tr><td>.176</td><td>.177-.190</td><td>.191</td></tr>
+          <tr><td>.192</td><td>.193-.206</td><td>.207</td></tr>
+          <tr><td>.208</td><td>.209-.222</td><td>.223</td></tr>
+          <tr><td>.224</td><td>.225-.238</td><td>.239</td></tr>
+          <tr><td>.240</td><td>.241-.254</td><td>.255</td></tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p><b>/29 - 32 Subnets - 6 Hosts/Subnet</b></p>
+        <table>
+          <tr><th>Network #</th><th>IP Range</th><th>Broadcast</th></tr>
+          <tr><td>.0</td><td>.1-.6</td><td>.7</td></tr>
+          <tr><td>.8</td><td>.9-.14</td><td>.15</td></tr>
+          <tr><td>.16</td><td>.17-.22</td><td>.23</td></tr>
+          <tr><td>.24</td><td>.25-.30</td><td>.31</td></tr>
+          <tr><td>.32</td><td>.33-.38</td><td>.39</td></tr>
+          <tr><td>.40</td><td>.41-.46</td><td>.47</td></tr>
+          <tr><td>.48</td><td>.49-.54</td><td>.55</td></tr>
+          <tr><td>.56</td><td>.57-.62</td><td>.63</td></tr>
+          <tr><td>.64</td><td>.65-.70</td><td>.71</td></tr>
+          <tr><td>.72</td><td>.73-.78</td><td>.79</td></tr>
+          <tr><td>.80</td><td>.81-.86</td><td>.87</td></tr>
+          <tr><td>.88</td><td>.89-.94</td><td>.95</td></tr>
+          <tr><td>.96</td><td>.97-.102</td><td>.103</td></tr>
+          <tr><td>.104</td><td>.105-.110</td><td>.111</td></tr>
+          <tr><td>.112</td><td>.113-.118</td><td>.119</td></tr>
+          <tr><td>.120</td><td>.121-.126</td><td>.127</td></tr>
+          <tr><td>.128</td><td>.129-.134</td><td>.135</td></tr>
+          <tr><td>.136</td><td>.137-.142</td><td>.143</td></tr>
+          <tr><td>.144</td><td>.145-.150</td><td>.151</td></tr>
+          <tr><td>.152</td><td>.153-.158</td><td>.159</td></tr>
+          <tr><td>.160</td><td>.161-.166</td><td>.167</td></tr>
+          <tr><td>.168</td><td>.169-.174</td><td>.175</td></tr>
+          <tr><td>.176</td><td>.177-.182</td><td>.183</td></tr>
+          <tr><td>.184</td><td>.185-.190</td><td>.191</td></tr>
+          <tr><td>.192</td><td>.193-.198</td><td>.199</td></tr>
+          <tr><td>.200</td><td>.201-.206</td><td>.207</td></tr>
+          <tr><td>.208</td><td>.209-.214</td><td>.215</td></tr>
+          <tr><td>.216</td><td>.217-.222</td><td>.223</td></tr>
+          <tr><td>.224</td><td>.225-.230</td><td>.231</td></tr>
+          <tr><td>.232</td><td>.233-.238</td><td>.239</td></tr>
+          <tr><td>.240</td><td>.241-.246</td><td>.247</td></tr>
+          <tr><td>.248</td><td>.249-.254</td><td>.255</td></tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
 </details>
 
 > [!NOTE]
 > CIDR /31 is a special case where both IPs in the block are usable for point-to-point links.
 > The network and broadcast addresses do not exist in this case.
 > This special case is not implemented in NetPractice.
-> 
+>
 > Formula for calculating the number of hosts per network: 2^(32 - CIDR) - 2.
 > The first &amp; last IPs in each subnet are reserved for the network and broadcast addresses. (Not usable for hosts)
 
 ## Explained Answers
-Alphabets used in IPs are used as placeholders to denote an unknown number as it is dynamically allocated by the subject.
-The letter 'x' is reserved to denote a missing number in the IP address that has no significance, usually used in default IP examples.
+
+Alphabets used in IPs are used as placeholders to denote an unknown number as it is dynamically allocated by the
+subject.
+The letter 'x' is reserved to denote a missing number in the IP address that has no significance, usually used in
+default IP examples.
 Alphabets can only represent 1 integer from 0 to 255.
 <hr/>
 
@@ -348,9 +361,12 @@ Alphabets can only represent 1 integer from 0 to 255.
 
 > [!NOTE]
 > The locked Internet I route restricts the usable IP range to the 1st subnet block of /26.
-> Using /28 masks for all interfaces, the 4 smaller subnets blocks was made as a subset, hence losing 8 more IPs as usable IPs.
-> In the examples, network D used the 1st subnet, network C used the 2nd subnet, and the P2P (interface R13 & R21) used the last subnet.
-> The 3rd subnet block was left unused as it is not needed for this level. The usable IPs in the 3rd subnet block are a.b.c.[33 - 46].
+> Using /28 masks for all interfaces, the 4 smaller subnets blocks was made as a subset, hence losing 8 more IPs as
+> usable IPs.
+> In the examples, network D used the 1st subnet, network C used the 2nd subnet, and the P2P (interface R13 & R21) used
+> the last subnet.
+> The 3rd subnet block was left unused as it is not needed for this level. The usable IPs in the 3rd subnet block are
+> a.b.c.[33 - 46].
 <details>
   <summary>
     <h3 style="display: inline" name="level-8">Level 8: Advanced Routing & Public IP Subnetting</h3>
@@ -542,7 +558,7 @@ Alphabets can only represent 1 integer from 0 to 255.
 > Interface R13 & R21 are forced to use the last subnet of the /30 block due to the locked R21 mask.
 > Network H4 is forced to use the 3rd subnet of the /26 block due to the locked H41 mask.
 > Since network H3 has the least locked fields, the remaining valid IPs for it are a.b.c.[193 - 250].
-> 
+>
 > The biggest subnet mask that can be used for network H3 is /27, which reduces the valid IPs to a.b.c.[193 - 222].
 > It is highly recommended to use /27 for network H3 as it allows for the most flexibility,
 > but other subnet masks can be used as long as they are inside the a.b.c.[193 - 250] range.

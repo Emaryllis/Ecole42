@@ -1,10 +1,10 @@
 #include "Fixed.hpp"
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 const int Fixed::fracBits = 8;
 
-Fixed::Fixed() : fixedPoint(0) {
+Fixed::Fixed(): fixedPoint(0) {
 	std::cout << "default constructor called" << std::endl;
 }
 
@@ -12,11 +12,11 @@ Fixed::Fixed(const Fixed &obj): fixedPoint(obj.getRawBits()) {
 	std::cout << "copy constructor called" << std::endl;
 }
 
-Fixed::Fixed(int num) : fixedPoint(num << fracBits) {
+Fixed::Fixed(int num): fixedPoint(num << fracBits) {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(float num) : fixedPoint(
+Fixed::Fixed(float num): fixedPoint(
 	static_cast<int>(roundf(num * (1 << fracBits)))) {
 	std::cout << "Float constructor called" << std::endl;
 }

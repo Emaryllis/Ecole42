@@ -1,10 +1,9 @@
+#include <iostream>
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
-#include <iostream>
 
 int main() {
 	Animal a1;
@@ -29,5 +28,5 @@ int main() {
 	wa2.makeSound();
 	wc2.makeSound();
 
-    return 0;
+	return 0;
 }

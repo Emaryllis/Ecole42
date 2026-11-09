@@ -1,6 +1,6 @@
+#include "Span.hpp"
 #include <algorithm>
 #include <iostream>
-#include "Span.hpp"
 
 Span::Span(): _maxSize(0) {
 	std::cout << "Span default constructor called" << std::endl;

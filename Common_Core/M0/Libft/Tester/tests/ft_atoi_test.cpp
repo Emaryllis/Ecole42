@@ -5,16 +5,16 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
+#include <climits>
+#include <cstring>
 #include "check.hpp"
 #include "leaks.hpp"
-#include <string.h>
-#include <climits>
+#include "sigsegv.hpp"
 
 int iTest = 1;
 int main(void)
 {
-	signal(SIGSEGV, sigsegv); 
+	signal(SIGSEGV, sigsegv);
 	title("ft_atoi\t\t: ")
 
 	char escape[] = {9, 10, 11, 12, 13, 0};

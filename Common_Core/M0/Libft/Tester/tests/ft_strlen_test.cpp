@@ -5,9 +5,9 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
 #include "check.hpp"
 #include "leaks.hpp"
+#include "sigsegv.hpp"
 
 int iTest = 1;
 int main(void)

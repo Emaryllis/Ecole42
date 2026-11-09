@@ -1,9 +1,10 @@
 #ifndef PRINT_HPP
 # define PRINT_HPP
-# include <unistd.h>
-# include <string.h>
-# include <sys/wait.h>
+# include <cstring>
 # include <sstream>
+# include <unistd.h>
+
+# include <sys/wait.h>
 # define B_SIZE 4096
 # define TEST(nb, test) {if (ac == 1 || testNumber == nb) test;}
 # define SUBCATEGORY(min, max, output) {if (ac == 1 || (testNumber >= min && testNumber <= max)) output}
@@ -44,14 +45,14 @@ void print(const char * s, Args... args)
 	{
 		char	printfStr[B_SIZE], ft_printfStr[B_SIZE];
 		int		printfRet, ft_printfRet;
-		char	eof = EOF; 
+		char	eof = EOF;
 		int		readReturn;
 		int		p[2];
 
 		if (pipe(p) < 0)
 			throw std::runtime_error("pipe() failed");
 		stdOut = dup(1); pipeOut = p[1]; dup2(pipeOut, 1);
-	
+
 		printfRet = printf(s, args...); write(1, &eof, 1);
 		if ((readReturn = read(p[0], printfStr, B_SIZE)) < 0)
 			throw std::runtime_error("read failed");
@@ -88,7 +89,7 @@ void print(const char * s, Args... args)
 		}
 		if (showTest)
 			exit(EXIT_SUCCESS);
-	}	
+	}
 	++iTest;
 }
 
@@ -104,15 +105,15 @@ void checkn(const char * s, Args... args)
 	{
 		char	printfStr[B_SIZE], ft_printfStr[B_SIZE];
 		int		printfRet, ft_printfRet;
-		char	eof = EOF; 
+		char	eof = EOF;
 		int		readReturn;
 		int		p[2];
 		unsigned long long int printfn = -1 , ft_printfn = -1;
-	
+
 		if (pipe(p) < 0)
 			throw std::runtime_error("pipe() failed");
 		stdOut = dup(1); pipeOut = p[1]; dup2(pipeOut, 1);
-	
+
 		printfRet = printf(s, args..., &printfn); write(1, &eof, 1);
 		if ((readReturn = read(p[0], printfStr, B_SIZE)) < 0)
 			throw std::runtime_error("read failed");
@@ -124,7 +125,7 @@ void checkn(const char * s, Args... args)
 			cout << FG_CYAN << "printf:    [" << printfStr << "] = " << printfRet << " n = " << (unsigned long long int)static_cast<requiredType>(printfn) << ENDL;
 			dup2(pipeOut, 1);
 		}
-		
+
 		ft_printfRet = ft_printf(s, args..., &ft_printfn); write(1, &eof, 1);
 		if ((readReturn = read(p[0], ft_printfStr, B_SIZE)) < 0)
 			throw std::runtime_error("read failed");
@@ -154,7 +155,7 @@ void checkn(const char * s, Args... args)
 		}
 		if (showTest)
 			exit(EXIT_SUCCESS);
-	}	
+	}
 	++iTest;
 }
 

@@ -1,8 +1,9 @@
-# include <unistd.h>
-# include <string.h>
-# include <sys/wait.h>
 # include "sigsegv.hpp"
+# include <cstring>
+# include <unistd.h>
 # include "color.hpp"
+
+# include <sys/wait.h>
 
 extern int iTest;
 extern bool showTest;
@@ -20,4 +21,3 @@ void sigsegv(int signal)
 	dup2(pipeOut, 1);
 	exit(EXIT_SUCCESS);
 }
-

@@ -5,15 +5,16 @@ extern "C"
 #undef new
 }
 
-#include <sys/wait.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+#include <cstring>
 #include <fcntl.h>
 #include <unistd.h>
-#include "sigsegv.hpp"
 #include "check.hpp"
 #include "gnl.hpp"
+#include "sigsegv.hpp"
+
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 //https://github.com/arhuaco/ram-is-mine/blob/master/src/ram_is_mine.c
 extern bool is_initializing;
@@ -24,7 +25,7 @@ int main(void)
 	is_initializing = false;
 	signal(SIGSEGV, sigsegv); int fd[4];
 	title("[BUFFER_SIZE = " << BUFFER_SIZE << "]: " << ENDL)
-	
+
 	title("multiple fd: ")
 	fd[0] = open("files/41_with_nl", O_RDWR);
 	/* 1 */ gnl(1000, NULL);

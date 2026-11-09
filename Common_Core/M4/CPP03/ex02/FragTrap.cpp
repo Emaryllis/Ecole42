@@ -1,21 +1,21 @@
 #include "FragTrap.hpp"
 #include <iostream>
 
-FragTrap::FragTrap() : ClapTrap("FragTrap") {
+FragTrap::FragTrap(): ClapTrap("FragTrap") {
 	hitPoints = 100;
 	energyPoints = 100;
 	attackDamage = 30;
 	std::cout << "FragTrap default constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
+FragTrap::FragTrap(const std::string &name): ClapTrap(name) {
 	hitPoints = 100;
 	energyPoints = 100;
 	attackDamage = 30;
 	std::cout << "FragTrap parameterized constructor called for " << this->name << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other) {
+FragTrap::FragTrap(const FragTrap &other): ClapTrap(other) {
 	std::cout << "FragTrap copy constructor called for " << name << std::endl;
 }
 
@@ -39,7 +39,8 @@ void FragTrap::attack(const std::string &target) {
 		std::cout << "FragTrap " << name << " cannot attack because it has no energy points left." << std::endl;
 		return;
 	}
-	std::cout << "FragTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+	std::cout << "FragTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" <<
+			std::endl;
 	energyPoints--;
 }
 

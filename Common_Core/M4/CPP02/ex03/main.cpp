@@ -1,5 +1,5 @@
-#include "Point.hpp"
 #include <iostream>
+#include "Point.hpp"
 
 int main() {
 	const Point a;

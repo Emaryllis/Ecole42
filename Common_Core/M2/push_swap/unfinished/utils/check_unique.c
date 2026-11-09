@@ -9,12 +9,12 @@
 /*   Updated: 2025/09/13 23:35:32 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "hashset.h"
-#include "intlist.h"
-#include <stdlib.h>
 #include <limits.h>
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdlib.h>
+#include "hashset.h"
+#include "intlist.h"
 
 // 1. Hash function
 uint32_t	hash(int key, int capacity)

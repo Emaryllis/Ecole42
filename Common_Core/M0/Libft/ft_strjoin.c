@@ -9,8 +9,8 @@
 /*   Updated: 2025/09/11 20:14:41 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 #include <stddef.h>
+#include <stdlib.h>
 
 static size_t	ft_strlen(const char *str)
 {

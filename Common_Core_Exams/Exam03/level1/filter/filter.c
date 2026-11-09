@@ -1,7 +1,7 @@
-#include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
+#include <unistd.h>
 // Allowed functions: read, write, strlen, memmem, memmove, malloc, calloc,
 // realloc, free, printf, fprintf, stdout, stderr, perror
 

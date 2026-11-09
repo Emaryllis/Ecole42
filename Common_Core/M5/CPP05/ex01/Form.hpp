@@ -18,12 +18,12 @@ public:
 
 	void beSigned(const Bureaucrat &bureaucrat);
 
-	class GradeTooHighException : public std::exception {
+	class GradeTooHighException: public std::exception {
 	public:
 		const char *what() const throw();
 	};
 
-	class GradeTooLowException : public std::exception {
+	class GradeTooLowException: public std::exception {
 	public:
 		const char *what() const throw();
 	};

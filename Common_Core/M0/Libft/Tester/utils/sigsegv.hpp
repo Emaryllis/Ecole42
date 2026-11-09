@@ -1,10 +1,10 @@
 #ifndef SIGSEGV_HPP
 # define SIGSEGV_HPP
 
-# include <iostream>
-# include <csignal>
-# include <stdlib.h>
-# include "color.hpp"
+#include <csignal>
+#include <cstdlib>
+#include <iostream>
+#include "color.hpp"
 
 using namespace std;
 

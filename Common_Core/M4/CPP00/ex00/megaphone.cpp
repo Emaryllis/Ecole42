@@ -1,5 +1,5 @@
-#include <iostream>
 #include <cctype>
+#include <iostream>
 
 int main(int c, char **v) {
 	if (c == 1) {

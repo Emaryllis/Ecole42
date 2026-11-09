@@ -1,6 +1,6 @@
-#include "PhoneBook.hpp"
 #include <iostream>
 #include <string>
+#include "PhoneBook.hpp"
 
 int main() {
 	std::string cmd;

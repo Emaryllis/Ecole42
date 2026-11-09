@@ -9,10 +9,11 @@
 /*   Updated: 2025/09/14 02:35:04 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "../utils/libc/libc.h"
+#include <stdlib.h>
 #include "chunk.h"
 #include "move_cost.h"
-#include <stdlib.h>
+
+#include "../utils/libc/libc.h"
 /**
  * Determines where the candidate should be inserted.
  * @param s The given stack

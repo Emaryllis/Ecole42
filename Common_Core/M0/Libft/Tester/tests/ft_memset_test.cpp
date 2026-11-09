@@ -5,16 +5,16 @@ extern "C"
 #undef new
 }
 
+#include <cstring>
 #include <unistd.h>
-#include "sigsegv.hpp"
 #include "check.hpp"
 #include "leaks.hpp"
-#include <string.h>
+#include "sigsegv.hpp"
 
 int iTest = 1;
 int main(void)
 {
-	signal(SIGSEGV, sigsegv);  
+	signal(SIGSEGV, sigsegv);
 	title("ft_memset\t: ")
 
 	char tab[100];

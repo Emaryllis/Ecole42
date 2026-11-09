@@ -5,10 +5,10 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
+#include <cstring>
 #include "check.hpp"
 #include "leaks.hpp"
-#include <string.h>
+#include "sigsegv.hpp"
 
 int iTest = 1;
 int main(void)
@@ -19,7 +19,7 @@ int main(void)
 	char * s = ft_strdup((char*)"coucou");
 	/* 1 */ check(!strcmp(s, "coucou"));
 	/* 2 */ mcheck(s, strlen("coucou") + 1); free(s); showLeaks();
-	
+
 	s = ft_strdup((char*)"");
 	/* 3 */ check(!strcmp(s, ""));
 	/* 4 */ mcheck(s, 1); free(s); showLeaks();

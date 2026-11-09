@@ -13,9 +13,11 @@
 # define MAIN_H
 # include <stdlib.h> // free
 # include <unistd.h> // write
+
+# include "minilibx-linux/mlx.h"
+
 # include <X11/keysym.h>
 # include <X11/X.h>
-# include "minilibx-linux/mlx.h"
 
 // Window size
 # define WIDTH	800

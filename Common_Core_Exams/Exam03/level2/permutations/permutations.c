@@ -1,6 +1,6 @@
-#include <unistd.h> // write
 #include <stdio.h> // puts
 #include <stdlib.h> // malloc, free
+#include <unistd.h> // write
 // Allowed functions: puts, malloc, calloc, realloc, free, write
 
 static void bsort(char *s, int len) {

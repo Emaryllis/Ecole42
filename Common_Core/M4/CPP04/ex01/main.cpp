@@ -1,23 +1,28 @@
+#include <iostream>
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include <iostream>
+
 int main() {
 	const int arraySize = 4;
-	Animal* animals[arraySize];
+	Animal *animals[arraySize];
 
-	animals[0] = new Dog();
-	static_cast<Dog*>(animals[0])->getBrain()->setIdea(0, "Chase cat1");
-	animals[1] = new Dog(*static_cast<Dog*>(animals[0]));
-	static_cast<Dog*>(animals[0])->getBrain()->setIdea(0, "Chase cat2");
-	std::cout << static_cast<Dog*>(animals[0])->getBrain()->getIdea(0) << std::endl;
-	std::cout << static_cast<Dog*>(animals[1])->getBrain()->getIdea(0) << std::endl;
+	Dog *dog = new Dog();
+	dog->getBrain()->setIdea(0, "Chase cat1");
+	Dog *dogCopy = new Dog(*dog);
+	dog->getBrain()->setIdea(0, "Chase cat2");
+	std::cout << dog->getBrain()->getIdea(0) << std::endl;
+	std::cout << dogCopy->getBrain()->getIdea(0) << std::endl;
+	animals[0] = dog;
+	animals[1] = dogCopy;
 
-	animals[2] = new Cat();
-	static_cast<Cat*>(animals[2])->getBrain()->setIdea(0, "Chase dog1");
-	animals[3] = new Cat(*static_cast<Cat*>(animals[2]));
-	static_cast<Cat*>(animals[2])->getBrain()->setIdea(0, "Chase dog2");
-	std::cout << static_cast<Cat*>(animals[2])->getBrain()->getIdea(0) << std::endl;
-	std::cout << static_cast<Cat*>(animals[3])->getBrain()->getIdea(0) << std::endl;
+	Cat *cat = new Cat();
+	cat->getBrain()->setIdea(0, "Chase dog1");
+	Cat *catCopy = new Cat(*cat);
+	cat->getBrain()->setIdea(0, "Chase dog2");
+	std::cout << cat->getBrain()->getIdea(0) << std::endl;
+	std::cout << catCopy->getBrain()->getIdea(0) << std::endl;
+	animals[2] = cat;
+	animals[3] = catCopy;
 
 	for (int i = 0; i < arraySize; i++) {
 		delete animals[i];

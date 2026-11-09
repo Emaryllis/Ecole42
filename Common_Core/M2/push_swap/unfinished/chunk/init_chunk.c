@@ -9,9 +9,10 @@
 /*   Updated: 2025/09/13 20:15:39 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "utils/libc/libc.h"
-#include "chunk.h"
 #include <stdlib.h>
+#include "chunk.h"
+
+#include "utils/libc/libc.h"
 
 /**
  * Allocates chunks based on chunk top & no of numbers.

@@ -9,9 +9,9 @@
 /*   Updated: 2025/09/10 00:14:09 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf_utils.h"
 #include <stdarg.h>
 #include <unistd.h>
+#include "ft_printf_utils.h"
 
 static int	pointer_check(va_list args)
 {

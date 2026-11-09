@@ -9,10 +9,12 @@
 /*   Updated: 2025/09/13 21:32:48 by egoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "move_cost.h"
-#include "../libc/libc.h"
-#include "../stack.h"
 #include <stdlib.h>
+#include "move_cost.h"
+
+#include "../stack.h"
+
+#include "../libc/libc.h"
 
 // ---------------------------
 // 4️⃣ Append move helper

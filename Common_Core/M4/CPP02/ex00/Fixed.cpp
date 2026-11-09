@@ -3,7 +3,7 @@
 
 const int Fixed::fracBits = 8;
 
-Fixed::Fixed() : fixedPoint(0) {
+Fixed::Fixed(): fixedPoint(0) {
 	std::cout << "default constructor called" << std::endl;
 }
 

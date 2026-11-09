@@ -1,11 +1,10 @@
 #include "PhoneBook.hpp"
-#include <iostream>
+#include <cstdlib>
 #include <iomanip>
+#include <iostream>
 #include <string>
-#include <cstdlib> // atoi, exit
 
-PhoneBook::PhoneBook() : contactCount(0) {
-}
+PhoneBook::PhoneBook(): contactCount(0) {}
 
 std::string PhoneBook::getNonEmptyString(const std::string &prompt) const {
 	std::string input;
@@ -67,7 +66,7 @@ void PhoneBook::addContactPrompt() {
 		"Enter darkest secret: ");
 
 	const Contact newContact(firstName, lastName, nickname, phoneNumber,
-							darkestSecret);
+	                         darkestSecret);
 	addContact(newContact);
 }
 
@@ -97,7 +96,7 @@ void PhoneBook::displayContacts() const {
 void PhoneBook::displayContact(int index) const {
 	if (index < 0 || index >= contactCount) {
 		std::cout << "There are only " << contactCount <<
-			" contacts in the phonebook." << std::endl;
+				" contacts in the phonebook." << std::endl;
 		return;
 	}
 	const Contact &contact = contacts[index];
@@ -123,7 +122,7 @@ void PhoneBook::searchContact() const {
 		index = getNonEmptyInteger("Index of entry to display: ");
 		if (index < 0 || index >= contactCount) {
 			std::cout << "There are only " << contactCount <<
-				" contacts in the phonebook." << std::endl;
+					" contacts in the phonebook." << std::endl;
 		} else {
 			valid = true;
 		}

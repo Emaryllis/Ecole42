@@ -1,6 +1,6 @@
-#include <stdio.h>
 #include <math.h> // for sqrtf()
 #include <stdbool.h> // for bool type
+#include <stdio.h>
 // Allowed functions: write, sqrtf, getline, fseek, fscanf, ferror, feof,
 // fabsf, memcpy, fprintf, fclose, malloc, calloc, realloc, free, fopen,
 // errno, stderr, stdin, stdout

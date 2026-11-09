@@ -1,5 +1,5 @@
-#include <cstdio>
 #include "leaks.hpp"
+#include <cstdio>
 
 std::vector<ptr> mallocList;
 

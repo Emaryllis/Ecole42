@@ -5,14 +5,15 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
-#include "check.hpp"
-#include "leaks.hpp"
-#include <string.h>
-#include <sys/stat.h>
+#include <climits>
+#include <cstring>
 #include <fcntl.h>
 #include <unistd.h>
-#include <climits>
+#include "check.hpp"
+#include "leaks.hpp"
+#include "sigsegv.hpp"
+
+#include <sys/stat.h>
 
 int iTest = 1;
 int main(void)

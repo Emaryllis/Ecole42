@@ -1,22 +1,22 @@
 #include "Dog.hpp"
 #include <iostream>
 
-Dog::Dog() : AAnimal("Dog"), brain(NULL) {
+Dog::Dog(): AAnimal("Dog"), brain(NULL) {
 	brain = new Brain();
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const std::string& type) : AAnimal(type), brain(NULL) {
+Dog::Dog(const std::string &type): AAnimal(type), brain(NULL) {
 	brain = new Brain();
 	std::cout << "Dog parameterized constructor called for " << this->getType() << std::endl;
 }
 
-Dog::Dog(const Dog& other) : AAnimal(other), brain(NULL) {
+Dog::Dog(const Dog &other): AAnimal(other), brain(NULL) {
 	brain = new Brain(*other.brain);
 	std::cout << "Dog copy constructor called for " << this->getType() << std::endl;
 }
 
-Dog& Dog::operator=(const Dog& other) {
+Dog &Dog::operator=(const Dog &other) {
 	if (this != &other) {
 		AAnimal::operator=(other);
 		if (brain)
@@ -38,6 +38,6 @@ void Dog::makeSound() const {
 	std::cout << "Woof!" << std::endl;
 }
 
-Brain* Dog::getBrain() const {
+Brain *Dog::getBrain() const {
 	return brain;
 }

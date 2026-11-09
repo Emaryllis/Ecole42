@@ -1,7 +1,7 @@
+#include <dirent.h>
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include <dirent.h>
 
 // Function prototype
 int picoshell(char **cmds[]);

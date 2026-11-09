@@ -5,17 +5,17 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
+#include <cstring>
 #include "check.hpp"
 #include "leaks.hpp"
-#include <string.h>
+#include "sigsegv.hpp"
 
 int iTest = 1;
 int main(void)
 {
 	signal(SIGSEGV, sigsegv);
 	title("ft_strlcpy\t: ")
-	
+
 	char src[] = "coucou";
 	char dest[10]; memset(dest, 'A', 10);
 	/* 1 */ check(ft_strlcpy(dest, src, 0) == strlen(src) && dest[0] == 'A'); showLeaks();

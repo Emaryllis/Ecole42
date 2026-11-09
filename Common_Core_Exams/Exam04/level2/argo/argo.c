@@ -1,10 +1,10 @@
-#include <stdio.h>
-#include <stdbool.h>
 #include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include <limits.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 // Allowed functions: getc, ungetc, printf, malloc, calloc, realloc, free, isdigit, fscanf, write
 
 typedef struct	json {

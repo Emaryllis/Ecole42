@@ -3,7 +3,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : virtual public ClapTrap {
+class ScavTrap: virtual public ClapTrap {
 public:
 	ScavTrap();
 	ScavTrap(const std::string &name);

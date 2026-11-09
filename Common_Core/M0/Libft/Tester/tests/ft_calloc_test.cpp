@@ -5,12 +5,12 @@ extern "C"
 #undef new
 }
 
-#include "sigsegv.hpp"
+#include <climits>
+#include <cstring>
+#include <stdint.h>
 #include "check.hpp"
 #include "leaks.hpp"
-#include <string.h>
-#include <limits.h>
-#include <stdint.h>
+#include "sigsegv.hpp"
 
 int iTest = 1;
 int main(void)
@@ -25,8 +25,8 @@ int main(void)
 	/* 3 */ check(ft_calloc(SIZE_MAX, SIZE_MAX) == NULL); showLeaks();
 
 	/* @evportel */
-	/* The following tests are not supported by the function's documentation. 
- 	* But some effects returned in the trait by Moulinette so the following 
+	/* The following tests are not supported by the function's documentation.
+ 	* But some effects returned in the trait by Moulinette so the following
   	* tests were implemented. */
 	/* 4 */ check(ft_calloc(INT_MAX, INT_MAX) == NULL);
 	/* 5 */ check(ft_calloc(INT_MIN, INT_MIN) == NULL); showLeaks();

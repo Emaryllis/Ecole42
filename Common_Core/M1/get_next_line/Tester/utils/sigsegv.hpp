@@ -1,8 +1,8 @@
 #ifndef SIGSEGV_HPP
 # define SIGSEGV_HPP
 
-# include <iostream>
 # include <csignal>
+# include <iostream>
 # include <stdlib.h>
 # include "color.hpp"
 

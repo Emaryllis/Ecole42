@@ -1,22 +1,22 @@
 #include "Cat.hpp"
 #include <iostream>
 
-Cat::Cat() : Animal("Cat"), brain(NULL) {
+Cat::Cat(): Animal("Cat"), brain(NULL) {
 	brain = new Brain();
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const std::string& type) : Animal(type), brain(NULL) {
+Cat::Cat(const std::string &type): Animal(type), brain(NULL) {
 	brain = new Brain();
 	std::cout << "Cat parameterized constructor called for " << this->getType() << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other), brain(NULL) {
+Cat::Cat(const Cat &other): Animal(other), brain(NULL) {
 	brain = new Brain(*other.brain);
 	std::cout << "Cat copy constructor called for " << this->getType() << std::endl;
 }
 
-Cat& Cat::operator=(const Cat& other) {
+Cat &Cat::operator=(const Cat &other) {
 	if (this != &other) {
 		Animal::operator=(other);
 		if (brain)
@@ -38,6 +38,6 @@ void Cat::makeSound() const {
 	std::cout << "Meow!" << std::endl;
 }
 
-Brain* Cat::getBrain() const {
+Brain *Cat::getBrain() const {
 	return brain;
 }

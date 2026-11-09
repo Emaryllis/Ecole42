@@ -1,6 +1,5 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
-#include <iostream>
 
 int main() {
 	FragTrap fragtrap("Fragtrap1");
