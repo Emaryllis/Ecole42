@@ -2,47 +2,64 @@
 #define ARRAY_TPP
 
 #include <iostream>
+#include "Array.hpp"
 
-template<typename T>
-Array<T>::Array() : _elements(NULL), _size(0) {
+template <typename T>
+Array<T>::Array(): _elements(NULL), _size(0) {
 	std::cout << "Array default constructor called" << std::endl;
 }
 
-template<typename T>
-Array<T>::Array(const unsigned int n) : _elements(new T[n]()), _size(n) {
+template <typename T>
+Array<T>::Array(const unsigned int n): _elements(new T[n]()), _size(n) {
 	std::cout << "Array parameterized constructor called" << std::endl;
 }
 
-template<typename T>
-Array<T>::Array(Array const &other) : _elements(NULL), _size(0) {
+template <typename T>
+Array<T>::Array(Array const &other): _elements(NULL), _size(other._size) {
 	std::cout << "Array copy constructor called" << std::endl;
-}
-
-template<typename T>
-Array<T> &Array<T>::operator=(Array const &other) {
-	std::cout << "Array copy assignment operator called" << std::endl;
-	if (this != &other) {
-		delete[] _elements;
-		_size = other._size;
-		if (_size > 0) {
-			_elements = new T[_size]();
+	if (_size > 0) {
+		_elements = new T[_size]();
+		try {
 			for (unsigned int i = 0; i < _size; i++) {
 				_elements[i] = other._elements[i];
 			}
-		} else {
-			_elements = NULL;
+		} catch (...) {
+			delete[] _elements;
+			throw;
 		}
+	}
+}
+
+template <typename T>
+Array<T> &Array<T>::operator=(Array const &other) {
+	std::cout << "Array copy assignment operator called" << std::endl;
+	if (this != &other) {
+		T *newElements = NULL;
+		if (other._size > 0) {
+			newElements = new T[other._size]();
+			try {
+				for (unsigned int i = 0; i < other._size; i++) {
+					newElements[i] = other._elements[i];
+				}
+			} catch (...) { // T::operator= threw so free the new buffer so it doesn't leak, then pass the exception on
+				delete[] newElements;
+				throw;
+			}
+		}
+		delete[] _elements;
+		_elements = newElements;
+		_size = other._size;
 	}
 	return *this;
 }
 
-template<typename T>
+template <typename T>
 Array<T>::~Array() {
 	std::cout << "Array destructor called" << std::endl;
 	delete[] _elements;
 }
 
-template<typename T>
+template <typename T>
 T &Array<T>::operator[](unsigned int index) {
 	if (index >= _size) {
 		throw OutOfBoundsException();
@@ -50,7 +67,7 @@ T &Array<T>::operator[](unsigned int index) {
 	return _elements[index];
 }
 
-template<typename T>
+template <typename T>
 T const &Array<T>::operator[](unsigned int index) const {
 	if (index >= _size) {
 		throw OutOfBoundsException();
@@ -58,12 +75,12 @@ T const &Array<T>::operator[](unsigned int index) const {
 	return _elements[index];
 }
 
-template<typename T>
+template <typename T>
 unsigned int Array<T>::size() const {
 	return _size;
 }
 
-template<typename T>
+template <typename T>
 char const *Array<T>::OutOfBoundsException::what() const throw() {
 	return "Index out of bounds";
 }

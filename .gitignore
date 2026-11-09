@@ -3,3 +3,4 @@ minified-*.txt
 # Makefile build artifacts
 *.o
 a.out
+*.pdf

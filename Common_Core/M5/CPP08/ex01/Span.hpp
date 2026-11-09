@@ -1,10 +1,8 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-#include <vector>
 #include <exception>
-#include <algorithm>
-
+#include <vector>
 
 class Span {
 public:
@@ -14,13 +12,13 @@ public:
 	~Span();
 
 	void addNumber(int num);
-	int shortestSpan() const;
-	int longestSpan() const;
+	long shortestSpan() const;
+	long longestSpan() const;
 
-	template<typename Iterator>
+	template <typename Iterator>
 	void addNumbers(Iterator begin, Iterator end);
 
-	class SpanException : public std::exception {
+	class SpanException: public std::exception {
 	public:
 		SpanException(const char *msg) throw();
 		virtual const char *what() const throw();
