@@ -29,8 +29,4 @@ std::string const &AMateria::getType() const {
 	return type;
 }
 
-AMateria *AMateria::clone() const {
-	return new AMateria(*this);
-}
-
 void AMateria::use(ICharacter &) {}

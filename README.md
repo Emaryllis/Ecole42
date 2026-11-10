@@ -1,3 +1,4 @@
+<!--suppress ALL -->
 <h1 align="center">42Cursus Projects<br /><img src="https://wakatime.com/badge/user/a834cc3a-cc0a-4aa3-83a4-a825e4e9c3bf/project/018dfb31-895e-4abe-9b91-413fc09f0221.svg?style=plastic&color=863A82&label_color=FEFCFF" alt="WakaTime project time"/></h1>
 
 <table align="center">
@@ -12,7 +13,7 @@
   <tr>
     <td align="center"><b>00</b></td>
     <td><b>🗂️ <a href="./Common_Core/M0/Libft">Libft</a></b></td>
-    <td>5 to 10 May 2025 (13 Hours)</td>
+    <td>5 - 10 May 2025 (13 Hours)</td>
     <td>C, Library Creation, Makefile. Bonus: Singly Linked List</td>
     <td>Requires research on Libc functions</td>
     <td><img src="/../assets/100.svg" alt="100/100"></td>
@@ -20,7 +21,7 @@
   <tr>
     <td align="center"><b>01</b></td>
     <td><b>🖨️ <a href="./Common_Core/M1/ft_printf">ft_printf</a></b></td>
-    <td>13 to 14 May 2025 (3 Hours)</td>
+    <td>13 - 14 May 2025 (3 Hours)</td>
     <td>C, Variadic functions, Libft, Bonus: String Flags</td>
     <td>Requires mastery of libft to utilize the skills gained and its functions</td>
     <td><img src="/../assets/100.svg" alt="100/100"></td>
@@ -44,7 +45,7 @@
   <tr>
     <td align="center"><b>02</b></td>
     <td><b>📝 <a href="./Common_Core/M2/pipex">Pipex</a></b></td>
-    <td>4 July, 31 Aug, 10, 12 Sep (14.5 Hours)</td>
+    <td>4 Jul, 31 Aug, 10, 12 Sep (14.5 Hours)</td>
     <td>C, Process IDs, File Descriptors, Multiprocessing, Environment Variables, Executing Commands. Bonus: Multiple Commands, Limiters</td>
     <td>Mastery of file descriptors, opening, closing and communicating between processes.</td>
     <td><img src="/../assets/100.svg" alt="100/100"></td>
@@ -52,7 +53,7 @@
   <tr>
     <td align="center"><b>02</b></td>
     <td><b>🎨🌀 <a href="./Common_Core/M2/fract-ol">Fract'ol</a></b></td>
-    <td>11-13 July 2025 (13 Hours)</td>
+    <td>11 - 13 Jul 2025 (13 Hours)</td>
     <td>C, Complex Numbers, MiniLibX (X11), X11 keysym, Mandelbrot &amp; Julia Set, Pixel &amp; Color Manipulation, Hooks/Listeners. Bonus: More Fractals</td>
     <td>Mastery of file descriptors, opening, closing and communicating between processes.<details><summary>Why 105/100?</summary>Evaluators didn't want to eval partial bonus completion. (Arrow key zoom &amp; shifting color ranges)</details></td>
     <td><img src="/../assets/105.svg" alt="105/100"></td>
@@ -76,7 +77,8 @@
   </tr>
   <tr>
     <td align="center"><b>03</b></td>
-    <td><b>🐚 <a href="./Common_Core/M3/Minishell">Minishell</a></b></td>
+	<!--<td><b>🐚 <a href="./Common_Core/M3/Minishell">Minishell</a></b></td>-->
+    <td><b>🐚 <a href="https://github.com/Emaryllis/minishell">Minishell</a></b></td>
     <td>19 Nov - 29 Nov, 26 Dec 2025, 3 Feb, 4 Feb, 7 Feb - 10 Feb 2026 (76.3 Hours)</td>
     <td>C, Readline, Directory, Signal &amp; Terminal Management, Multiprocessing, Parsing &amp; Lexing/Tokenization, File Descriptors &amp; I/O. Bonus: Logical Operators &amp; Priorities, Wildcards</td>
     <td>Goes through the lexer, parser, execution lifecycle. Cascading returns of process exit codes are essential for a memory leak free program. Requires precise reading of the man to imitate bash 100%. Due to the collaborative nature of this project and varying levels of industrial development experience within the team, there is a clear structural divergence across the codebase.</td>
@@ -86,7 +88,7 @@
     <td align="center"><b>04</b></td>
     <td><b>⌨️ <a href="./Common_Core/M4/CPP00">CPP00</a></b></td>
     <td>27 Dec 2025 (2.5 Hours)</td>
-    <td>CPP, Parsing &amp; Formatting I/O, Object Oriented Programming, Circular Buffer</td>
+    <td>CPP, Parsing &amp; Formatting I/O, Object-Oriented Programming, Circular Buffer</td>
     <td>The start of CPP &amp; no norminette yayyy!! Was looking forward to this for months.</td>
     <td><img src="/../assets/100.svg" alt="100/100"></td>
   </tr>
@@ -94,7 +96,7 @@
     <td align="center"><b>04</b></td>
     <td><b>⌨️ <a href="./Common_Core/M4/CPP01">CPP01</a></b></td>
     <td>29 Dec 2025 (2.5 Hours)</td>
-    <td>CPP, Parsing &amp; Formatting &amp; File I/O, Object Oriented Programming, Destructors, Pointer to Functions, Switch Statements</td>
+    <td>CPP, Parsing &amp; Formatting &amp; File I/O, Object-Oriented Programming, Destructors, Pointer to Functions, Switch Statements</td>
     <td>Continuation of CPP, ex00 &amp; ex01 teaches deallocation &amp; destructors, ex06 optionally uses switch statement with fall through</td>
     <td><img src="/../assets/100.svg" alt="100/100"></td>
   </tr>
@@ -109,18 +111,82 @@
   <tr>
     <td align="center"><b>04</b></td>
     <td><b>⌨️ <a href="./Common_Core/M4/CPP03">CPP03</a></b></td>
-    <td>16 Jan, 2 April 2026 (6 Hours)</td>
+    <td>16 Jan, 2 Apr 2026 (6 Hours)</td>
     <td>CPP, Polymorphism, Inheritance</td>
     <td>Continuation of CPP. This project builds upon the Claptrap class. It is used in all exercises and teaches about multiple inheritance for ex03.</td>
     <td><img src="/../assets/100.svg" alt="100/100"></td>
   </tr>
   <tr>
     <td align="center"><b>04</b></td>
-    <td><b>🎮 <a href="./Common_Core/M4/cub3d">cub3d</a></b></td>
-    <td>20 April, 14 May, 1 June, 5 June - 7 June, 16 June, 19 June, 27 June, 1 July, 3 July (60.5 Hours)</td>
+    <td><b>⌨️ <a href="./Common_Core/M4/CPP04">CPP04</a></b></td>
+    <td>28 May, 2 Jun 2026 (13.75 Hours)</td>
+    <td>CPP, Subtype Polymorphism, Virtual Functions &amp; Destructors, Abstract Classes, Interfaces (Pure Virtual Functions), Deep Copies</td>
+    <td>Continuation of CPP. Builds upon the Animal class, ex02 makes it abstract &amp; ex03 teaches interfaces.</td>
+    <td><img src="/../assets/100.svg" alt="100/100"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>04</b></td>
+    <td><b>🎮 <a href="https://github.com/Emaryllis/cub3d">cub3d</a></b></td>
+    <td>20 Apr, 14 May, 1 Jun, 5 Jun - 7 Jun, 16 Jun, 19 Jun, 27 Jun, 1 Jul, 3 Jul (60.5 Hours)</td>
     <td>C, Parsing &amp; Validation of scene file, path &amp; map, MiniLibX (X11), X11 keysym, Uniform Ray Marching. Bonus: Wall collisions, minimap, door states, animated sprites, mouse view rotation</td>
     <td>Utilizes the Amanatides &amp; Woo DDA algorithm instead of uniform ray marching to maximize rendering throughput. It intentionally couples map parsing and validation into a single-pass pipeline, reducing time complexity at the expense of a minor increase in space complexity. More information in the README.md.</td>
     <td><img src="/../assets/110.svg" alt="110/100"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>04</b></td>
+    <td><b>🌐 <a href="./Common_Core/M4/NetPractice">NetPractice</a></b></td>
+    <td>6 Jul, 5 Aug, 18 Aug - 19 Aug, 2 Sep - 3 Sep 2026 (20.25 Hours)</td>
+    <td>Networking, TCP/IP Addressing, Subnet Masks &amp; CIDR, Private IP Ranges, Routing Tables, Gateways, Switches &amp; Routers</td>
+    <td>10 levels of network configurations solved in the training interface &amp; exported as JSON. NOTES.md is a cheat sheet with the rules &amp; explained answers for levels 6 to 10.</td>
+    <td><img src="/../assets/100.svg" alt="100/100"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>05</b></td>
+    <td><b>⌨️ <a href="./Common_Core/M5/CPP05">CPP05</a></b></td>
+    <td>8 Sep, 30 Sep, 7 Oct 2026 (5.25 Hours)</td>
+    <td>CPP, Exceptions (try/catch, nested exception classes), Abstract Classes, File I/O, Random Numbers</td>
+    <td>Builds upon the Bureaucrat class. ex02 turns Form into the abstract AForm with 3 concrete forms &amp; ex03 has an Intern create forms by name through a lookup array &amp; switch instead of an if/else forest.</td>
+    <td><img src="/../assets/100.svg" alt="100/100"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>05</b></td>
+    <td><b>⌨️ <a href="./Common_Core/M5/CPP06">CPP06</a></b></td>
+    <td>8 Sep 2026 (2 Hours)</td>
+    <td>CPP, Type Casting (static_cast, reinterpret_cast, dynamic_cast), Scalar Type Detection, Serialization, Run-Time Type Identification</td>
+    <td>ex00 detects &amp; converts char/int/float/double literals including nan &amp; inf, ex01 serializes a pointer to uintptr_t &amp; back, ex02 identifies a Base through a pointer &amp; a reference without typeinfo.</td>
+    <td><img src="/../assets/100.svg" alt="100/100"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>05</b></td>
+    <td><b>⌨️ <a href="./Common_Core/M5/CPP07">CPP07</a></b></td>
+    <td>8 Sep, 9 Oct, 9 Nov 2026 (2.5 Hours)</td>
+    <td>CPP, Function Templates, Class Templates, Template Implementation Files (.tpp), Deep Copies</td>
+    <td>ex02's Array class template must deep copy on copy &amp; assignment and throw on out of bounds access. Run make re after editing a .tpp since headers aren't tracked by the Makefile.</td>
+    <td>Pending</td>
+  </tr>
+  <tr>
+    <td align="center"><b>05</b></td>
+    <td><b>🐳 <a href="./Common_Core/M5/Inception">Inception</a></b></td>
+    <td>21 Sep, 23 Sep - 24 Sep 2026 (14.75 Hours)</td>
+    <td>Docker, Docker Compose, Custom Dockerfiles (Debian), NGINX (TLSv1.2/1.3), WordPress + PHP-FPM, MariaDB, Named Volumes, Docker Networks, Secrets</td>
+    <td>No pre-built images from DockerHub, every service is built from its own Dockerfile &amp; NGINX on port 443 is the only entrypoint. More information in the README.md.</td>
+    <td>Pending</td>
+  </tr>
+  <tr>
+    <td align="center"><b>05</b></td>
+    <td><b>⌨️ <a href="./Common_Core/M5/CPP08">CPP08</a></b></td>
+    <td>30 Sep, 7 Oct, 9 Nov 2026 (4.75 Hours)</td>
+    <td>CPP, STL Containers, Iterators, Algorithms, Templated Containers</td>
+    <td>ex00 searches any int container with std::find, ex01's Span uses STL algorithms instead of loops (watch for int overflow on the span), ex02's MutantStack exposes std::stack's underlying container iterators.</td>
+    <td>Pending</td>
+  </tr>
+  <tr>
+    <td align="center"><b>05</b></td>
+    <td><b>⌨️ <a href="./Common_Core/M5/CPP09">CPP09</a></b></td>
+    <td>11 Nov 2026 (3 Hours)</td>
+    <td>CPP, STL Containers (std::map, std::stack, std::vector, std::deque), Parsing &amp; Validation, Reverse Polish Notation, Ford-Johnson Merge-Insertion Sort, Time Measurement</td>
+    <td>Each container used in an exercise can't be reused in the others. ex02 sorts with merge-insertion using the Jacobsthal sequence for the insertion order &amp; times both containers. Added tests since it was one of the harder projects. (tests/ in each exercise folder)</td>
+    <td>Pending</td>
   </tr>
 </table>
 
@@ -216,6 +282,27 @@
         <li><a href="https://nafuka11.github.io/philosophers-visualizer">Philosophers Visualizer</a></li>
         <li><a href="https://youtu.be/mvZKu0DfFLQ">Threads, mutexes, race conditions explanation</a></li>
         <li><a href="https://www.youtube.com/playlist?list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2">Threads playlist</a></li>
+      </ul>
+    </details>
+  </li>
+  <li>
+    <details>
+      <summary>M4 Resources:</summary>
+      <ul>
+        <li><a href="https://www.learncpp.com">LearnCpp (C++ tutorial, for CPP00 onwards)</a></li>
+        <li><a href="https://cplusplus.com/doc/tutorial">cplusplus.com tutorial</a></li>
+		<li><a href="https://en.cppreference.com/w/cpp">cppreference (C++ reference)</a></li>
+        <li><a href="https://cplusplus.com/doc/tutorial/polymorphism">Polymorphism, virtual &amp; pure virtual functions (For CPP04)</a></li>
+        <li><a href="https://isocpp.org/wiki/faq/virtual-functions">isocpp FAQ on virtual functions (For CPP04)</a></li>
+        <li><a href="http://www.cse.yorku.ca/~amana/research/grid.pdf">John Amanatides &amp; Andrew Woo (1987): A Fast Voxel Traversal Algorithm for Ray Tracing</a></li>
+        <li><a href="https://publications.ri.cmu.edu/survey-of-texture-mapping">Paul Heckbert (1986): Survey of Texture Mapping</a></li>
+        <li><a href="https://www.darpa.mil/sites/default/files/attachment/2025-06/best-practices-secure-data-intake-sergey-bratus-darpa-i2o.pdf">Sergey Bratus (2025): Best Practices for Secure Data Intake, Data Modeling, and Data Design (DARPA SafeDocs Program)</a></li>
+        <li><a href="https://arxiv.org/abs/2606.29574">Iliya Mirzaei, Shabnam Jafarzade Mojaveri, Amirhossein Najafizadeh (2026): Stateless Network-Aware Adaptive Bitrate Streaming over IPFS</a></li>
+        <li><a href="https://scispace.com/pdf/online-computation-and-competitive-analysis-t096jbqm8l.pdf">Allan Borodin, Ran El-Yaniv (1998): Online Computation and Competitive Analysis</a></li>
+        <li><a href="https://arxiv.org/abs/1702.07696">Sándor P. Fekete, Jan-Marc Reinhardt, Christian Scheffer (2017): An Efficient Data Structure for Dynamic Two-Dimensional Reconfiguration</a></li>
+        <li><a href="https://github.com/42paris/minilibx-linux">MinilibX Source Repository</a></li>
+        <li>Cormen TH, Leiserson CE, Rivest RL, Stein C (2022): Introduction to Algorithms, 4th Edition, Chapter 16 (Amortized Analysis)</li>
+        <li><a href="./Common_Core/M4/NetPractice/NOTES.md">My NetPractice cheat sheet &amp; explained answers</a></li>
       </ul>
     </details>
   </li>
